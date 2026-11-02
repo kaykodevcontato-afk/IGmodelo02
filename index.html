@@ -21,13 +21,15 @@
     <script id="catalogo-de-fotos" type="application/json">
     {
       "brasao": "LogoBrasaoDaParoquia.png",  
-      "entrada_igreja": "FotoParoquiaPanoramico.png",  
+      "entrada_igreja": "Foto1EntradaIgreja.jpg",  
       "altar_1_original": "FotoPrimeiraAltarCelebracaomissas.png",  
       "altar_1_restaurado": "FotoPrimeiroAltarrestauradocomIA.png",  
       "altar_2": "FotoSegundoAltar.png",  
       "altar_3": "FotoTerceiroAltarAtual.jpeg",  
       "padroeira": "FotoPadroeira.webp",  
-      "paroco": "FotoPadreAdeildoSebastiaoFerreira.jpeg",  
+      "paroco_atual": "FotoPadreAdeildoSebastiaoFerreira.jpeg",  
+      "paroco_exemplo_1": "FotoPadreAdeildoSebastiaoFerreira.jpeg",  
+      "paroco_exemplo_2": "FotoPadreAdeildoSebastiaoFerreira.jpeg",  
       "festa": "FestaPadroeiraFoto01.jpg",  
       "quinta_eucaristica": "EucaristiaSantissimoFoto01.jpg",  
       "catequese": "CatequeseFoto01.jpg",  
@@ -87,8 +89,3367 @@
     </script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
-    <!-- ESTILOS: edite as cores e o tamanho da foto em css/estilos.css -->
-    <link rel="stylesheet" href="css/estilos.css">
+    <!-- ESTILOS: a edição em um arquivo único fica aqui. -->
+    <style>
+/* ================================================================
+   PARÓQUIA NOSSA SENHORA DO LIVRAMENTO — ESTILOS
+   ================================================================
+   COMO EDITAR:
+     • CORES e TAMANHO DA FOTO DA FESTA: seção :root no início.
+     • CARTÃO DA FESTA: procure "FOTO DA FESTA".
+     • FOTO: início de index.html, bloco 📸 FOTOS DO SITE.
+   • ALTERAR TEXTOS E CRIAR AVISOS: edite index.html.
+   Consulte o arquivo LEIA-ME.md para exemplos práticos.
+   ================================================================ */
+
+:root {
+    --azul: #0EAFEA;
+    --azul-escuro: #0b8fc0;
+    --dourado: #d4af37;
+    --dourado-claro: #f2d27a;
+    --dourado-escuro: #b8860b;
+    --texto: #333;
+    --texto-suave: #555;
+    --texto-fraco: #666;
+    --fundo-claro: #f0faff;
+    /* ALTERE AQUI O TAMANHO DA FOTO PRINCIPAL DA FESTA */
+    --foto-festa-altura: 350px;
+    --foto-festa-altura-celular: 255px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: "Peristiwa";
+    src: url("Peristiwa.otf") format("opentype");
+    font-display: swap;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(to bottom, #ffffff 40%, #eaf8ff);
+    text-align: center;
+    margin: 0;
+    color: var(--texto);
+}
+
+.topo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--azul), var(--azul-escuro), var(--dourado));
+    padding: 12px 4%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container-titulo {
+    display: flex;
+    flex: 0 1 auto;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+}
+
+.nome-site {
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.localizacao-topo {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+    border: 2px solid var(--dourado-claro);
+    flex-shrink: 0;
+}
+
+/* Menu horizontal com rolagem: aproxime o mouse das bordas para revelar os links. */
+.menu {
+    display: flex;
+    flex: 1 1 630px;
+    min-width: 0;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px 6px;
+    padding: 6px 2px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scroll-padding-inline: 12px;
+}
+
+.menu::-webkit-scrollbar {
+    display: none;
+}
+
+.menu a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.35;
+    padding: 9px 11px;
+    border-radius: 10px;
+    position: relative;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background: var(--dourado-claro);
+    left: 11px;
+    right: 11px;
+    bottom: 4px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.2s ease;
+}
+
+.menu a:hover, .menu a:focus-visible {
+    background: rgba(255,255,255,0.15);
+}
+
+.menu a:hover::after, .menu a:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.menu a:focus-visible {
+    outline: 2px solid var(--dourado-claro);
+    outline-offset: -2px;
+}
+
+.parallax {
+    width: 100%;
+    height: 450px;
+    /* A imagem de fundo vem do CATÁLOGO DE FOTOS em index.html. */
+    background-color: #163147;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.overlay h2 {
+    font-family: "Peristiwa", serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+}
+
+.overlay .subtitulo-parallax {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.titulo {
+    font-size: 2.2rem;
+    color: var(--azul-escuro);
+    margin-bottom: 5px;
+    scroll-margin-top: 160px;
+}
+
+.linha-azul {
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, var(--dourado), var(--dourado-claro));
+    margin: 10px auto 30px;
+    border-radius: 10px;
+}
+
+.missa-container {
+    padding: 50px 20px;
+}
+
+.agenda {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.agenda-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.agenda-item {
+    background: white;
+    border-top: 6px solid var(--dourado);
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.agenda-item.hoje {
+    border-top: 6px solid var(--azul);
+    background-color: var(--fundo-claro);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(14, 175, 234, 0.2);
+    z-index: 2;
+}
+
+.agenda-item.hoje::before {
+    content: "HOJE";
+    position: absolute;
+    top: -15px;
+    background: var(--azul);
+    color: white;
+    padding: 2px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.dia {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--azul-escuro);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.hora {
+    font-size: 1.4rem;
+    color: var(--dourado-escuro);
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+.local-missa {
+    font-size: 0.95rem;
+    color: var(--texto-fraco);
+    font-style: italic;
+}
+
+.separador-card {
+    width: 80%;
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 10px 0;
+}
+
+.exposicao-box {
+    background: var(--fundo-claro);
+    border: 1px dashed var(--azul);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 90%;
+}
+
+.exposicao-box strong {
+    color: var(--azul-escuro);
+    font-size: 0.9rem;
+}
+
+.exposicao-box span {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--azul);
+}
+
+.destaque-card {
+    background: linear-gradient(135deg, var(--azul), var(--azul-escuro));
+    color: white;
+    border-top: 6px solid var(--dourado-claro);
+}
+
+.destaque-card .dia, .destaque-card .hora, .destaque-card .local-missa {
+    color: white;
+}
+
+.youtube-section {
+    margin: 20px auto 80px;
+    max-width: 900px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+}
+
+.youtube-thumb {
+    flex: 1;
+    min-width: 300px;
+    background: linear-gradient(135deg, #0a1628, #122a45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 280px;
+    overflow: hidden;
+}
+
+.youtube-thumb iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* Estado sem live - placeholder bonito */
+.live-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    gap: 16px;
+    background: linear-gradient(135deg, #0a1628 0%, #0d2137 40%, #122a45 100%);
+}
+
+.live-placeholder-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 50%;
+    padding: 8px;
+    background: rgba(255,255,255,0.08);
+    border: 2px solid rgba(212,175,55,0.3);
+    animation: live-logo-pulso 3s ease-in-out infinite;
+}
+
+@keyframes live-logo-pulso {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(212,175,55,0.2);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(212,175,55,0.4);
+        transform: scale(1.05);
+    }
+
+}
+
+.live-placeholder-texto {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.live-placeholder-texto strong {
+    display: block;
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.live-placeholder-sino {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+    padding: 8px 18px;
+    background: rgba(255,0,0,0.15);
+    border: 1px solid rgba(255,0,0,0.3);
+    border-radius: 20px;
+    color: #ff6b6b;
+    font-size: 0.78rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.live-placeholder-sino i {
+    animation: live-sino-swing 2s ease-in-out infinite;
+}
+
+@keyframes live-sino-swing {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(15deg);
+    }
+
+    75% {
+        transform: rotate(-15deg);
+    }
+
+}
+
+/* Quando está ao vivo */
+.youtube-thumb.ao-vivo .live-placeholder {
+    display: none;
+}
+
+.youtube-thumb:not(.ao-vivo) iframe {
+    display: none;
+}
+
+.youtube-info {
+    flex: 1.2;
+    padding: 40px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.live-badge {
+    display: inline-flex;
+    align-items: center;
+    background: #ffe6e6;
+    color: #ff0000;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    width: fit-content;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+    }
+
+}
+
+.live-horario {
+    color: var(--dourado-escuro);
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.btn-assista {
+    background: #FF0000;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+    width: fit-content;
+}
+
+.btn-assista:hover {
+    background: #cc0000;
+}
+
+/* HISTÓRIA DA IGREJA */
+.historia-wrapper {
+    max-width: 1100px;
+    margin: 0 auto 100px;
+    padding: 0 20px;
+}
+
+.historia-intro {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    background: white;
+    border-radius: 20px;
+    padding: 45px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.historia-intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--azul), var(--dourado), var(--azul));
+}
+
+.historia-intro-texto {
+    text-align: left;
+}
+
+.intro-eyebrow {
+    display: inline-block;
+    color: var(--dourado-escuro);
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.historia-intro-texto h3 {
+    color: var(--azul-escuro);
+    font-size: 1.7rem;
+    margin: 0 0 18px;
+    line-height: 1.3;
+}
+
+.historia-intro-texto p {
+    line-height: 1.7;
+    color: var(--texto-suave);
+    margin: 0 0 12px;
+}
+
+.historia-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+}
+
+.stat-item {
+    background: linear-gradient(135deg, #fdfaf0, #ffffff);
+    border: 1px solid #f0e6c4;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.stat-item:hover {
+    transform: translateY(-3px);
+    border-color: var(--dourado);
+}
+
+.stat-item.destaque {
+    background: linear-gradient(135deg, var(--azul), var(--azul-escuro));
+    border-color: var(--azul-escuro);
+}
+
+.stat-item.destaque .stat-numero,
+        .stat-item.destaque .stat-label {
+    color: white;
+}
+
+.stat-numero {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--azul-escuro);
+    line-height: 1;
+}
+
+.stat-label {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.85rem;
+    color: var(--texto-fraco);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.subtitulo-historia {
+    text-align: center;
+    margin: 0 0 30px;
+    font-size: 1.5rem;
+    color: var(--azul-escuro);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.subtitulo-historia::before, .subtitulo-historia::after {
+    content: "";
+    flex: 1;
+    max-width: 100px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--dourado), transparent);
+}
+
+.subtitulo-historia span {
+    background: white;
+    padding: 0 10px;
+    color: var(--azul-escuro);
+}
+
+.subtitulo-descritivo {
+    text-align: center;
+    max-width: 700px;
+    margin: -15px auto 35px;
+    color: var(--texto-suave);
+    line-height: 1.6;
+}
+
+.timeline-bloco {
+    margin-bottom: 70px;
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--dourado-claro), var(--azul), var(--dourado-claro));
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+    margin-left: 0;
+    padding-right: 50px;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: 50%;
+    padding-left: 50px;
+    text-align: left;
+}
+
+.timeline-data {
+    position: absolute;
+    top: 25px;
+    background: linear-gradient(135deg, var(--azul), var(--azul-escuro));
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(14,175,234,0.3);
+    white-space: nowrap;
+}
+
+.timeline-item:nth-child(odd) .timeline-data {
+    right: -45px;
+    transform: translateX(50%);
+}
+
+.timeline-item:nth-child(even) .timeline-data {
+    left: -45px;
+    transform: translateX(-50%);
+}
+
+.timeline-conteudo {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+    transition: 0.3s;
+    position: relative;
+}
+
+.timeline-conteudo:hover {
+    transform: translateY(-3px);
+    border-color: var(--dourado-claro);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+}
+
+.timeline-conteudo h4 {
+    margin: 0 0 10px;
+    color: var(--azul-escuro);
+    font-size: 1.15rem;
+}
+
+.timeline-conteudo p {
+    margin: 0;
+    color: var(--texto-suave);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.altares-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.altar-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+    position: relative;
+}
+
+.altar-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.1);
+}
+
+.altar-card.altar-atual {
+    border: 2px solid var(--dourado);
+    box-shadow: 0 15px 35px rgba(212,175,55,0.2);
+}
+
+.altar-numero {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 5;
+    background: white;
+    color: var(--azul-escuro);
+    font-weight: bold;
+    font-size: 1.1rem;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border: 2px solid var(--dourado);
+}
+
+.altar-card.altar-atual .altar-numero {
+    background: var(--dourado);
+    color: white;
+}
+
+.altar-imagem {
+    width: 100%;
+    background: #f5f5f5;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.altar-imagem img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.altar-imagem.comparison-slider img {
+    width: 100%;
+    height: auto;
+}
+
+.altar-corpo {
+    padding: 25px;
+    text-align: left;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.altar-tag {
+    display: inline-block;
+    background: var(--fundo-claro);
+    color: var(--azul-escuro);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    align-self: flex-start;
+}
+
+.altar-tag.tag-destaque {
+    background: linear-gradient(135deg, var(--dourado), var(--dourado-claro));
+    color: white;
+}
+
+.altar-corpo h4 {
+    margin: 0 0 12px;
+    color: var(--azul-escuro);
+    font-size: 1.25rem;
+}
+
+.altar-corpo p {
+    margin: 0;
+    color: var(--texto-suave);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.label-atual {
+    background: var(--dourado) !important;
+}
+
+.comparison-slider, .foto-container {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    overflow: hidden;
+    position: relative;
+}
+
+.comparison-slider {
+    cursor: ew-resize;
+    line-height: 0;
+}
+
+.comparison-slider > img, .foto-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: none;
+}
+
+.camada-original {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.img-restaurada {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+    border-right: 3px solid var(--dourado-claro);
+}
+
+.img-restaurada img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+    display: block;
+}
+
+.label-before, .label-after, .label-fixo {
+    position: absolute;
+    bottom: 15px;
+    padding: 4px 10px;
+    background: rgba(14, 175, 234, 0.85);
+    color: white;
+    font-size: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.label-before {
+    right: 15px;
+    z-index: 1;
+}
+
+.label-after {
+    left: 15px;
+    z-index: 3;
+}
+
+.label-fixo {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* PADROEIRA */
+.padroeira-container {
+    max-width: 1100px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.padroeira-card {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background: white;
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.padroeira-card *, .padroeira-card *::before, .padroeira-card *::after {
+    box-sizing: border-box;
+}
+
+.padroeira-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--azul), var(--dourado), var(--azul));
+}
+
+.padroeira-foto {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.padroeira-foto-wrapper {
+    position: relative;
+    display: inline-block;
+    max-width: 320px;
+    width: 100%;
+}
+
+.padroeira-foto-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(11, 143, 192, 0.25);
+    position: relative;
+    z-index: 2;
+}
+
+.moldura-dourada {
+    position: absolute;
+    inset: -15px;
+    border: 2px solid var(--dourado);
+    border-radius: 20px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.moldura-dourada::before, .moldura-dourada::after {
+    content: "✦";
+    position: absolute;
+    color: var(--dourado);
+    background: white;
+    padding: 0 8px;
+    font-size: 14px;
+}
+
+.moldura-dourada::before {
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.moldura-dourada::after {
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.padroeira-info {
+    flex: 1.5;
+    text-align: left;
+    min-width: 300px;
+}
+
+.badge-padroeira {
+    display: inline-block;
+    background: var(--fundo-claro);
+    color: var(--azul-escuro);
+    border: 1px solid var(--azul);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.padroeira-info h3 {
+    color: var(--azul-escuro);
+    font-size: 1.8rem;
+    margin: 0 0 8px;
+}
+
+.legenda-padroeira {
+    color: var(--dourado-escuro);
+    font-style: italic;
+    font-weight: bold;
+    margin: 0 0 20px;
+}
+
+.texto-devocional p {
+    line-height: 1.7;
+    color: var(--texto-suave);
+    margin: 0 0 25px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.info-item {
+    background: linear-gradient(135deg, #fdfaf0, #ffffff);
+    border: 1px solid #f0e6c4;
+    border-radius: 12px;
+    padding: 15px 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.info-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(212, 175, 55, 0.15);
+    border-color: var(--dourado);
+}
+
+.info-icone {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+}
+
+.info-item strong {
+    display: block;
+    color: var(--azul-escuro);
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+}
+
+.info-item span:not(.info-icone) {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--texto-fraco);
+    line-height: 1.4;
+}
+
+.devocao-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.devocao-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.devocao-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.1);
+}
+
+.devocao-cabecalho {
+    padding: 30px 30px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #fdfaf0 0%, #ffffff 100%);
+    border-bottom: 2px dashed var(--dourado-claro);
+}
+
+.devocao-icone {
+    display: inline-block;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.3));
+}
+
+.devocao-cabecalho h3 {
+    margin: 0;
+    color: var(--azul-escuro);
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+}
+
+.devocao-subtitulo {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.85rem;
+    color: var(--dourado-escuro);
+    font-style: italic;
+    font-weight: 600;
+}
+
+.devocao-corpo {
+    padding: 30px;
+    text-align: center;
+    flex: 1;
+}
+
+.devocao-corpo .estrofe {
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--texto);
+    margin: 0 0 18px;
+}
+
+.devocao-hino .devocao-corpo .estrofe {
+    font-size: 1.05rem;
+}
+
+.devocao-oracao .devocao-corpo .estrofe {
+    text-align: left;
+}
+
+.refrao {
+    font-weight: bold;
+    color: var(--azul-escuro) !important;
+    padding: 12px 15px;
+    background: var(--fundo-claro);
+    border-radius: 10px;
+    border-left: 3px solid var(--azul);
+    border-right: 3px solid var(--azul);
+}
+
+.refrao::before, .refrao::after {
+    content: "—";
+    color: var(--dourado);
+    margin: 0 8px;
+}
+
+.amem {
+    text-align: center;
+    font-weight: bold;
+    color: var(--dourado-escuro);
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    margin: 20px 0 0;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.padre-container {
+    max-width: 1100px;
+    margin: 40px auto 80px;
+    padding: 0 20px;
+}
+
+.parocos-intro {
+    text-align: center;
+    max-width: 760px;
+    margin: -10px auto 28px;
+    color: var(--texto-suave);
+    line-height: 1.7;
+}
+
+.paroco-principal {
+    background: white;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    position: relative;
+    overflow: hidden;
+}
+
+.paroco-principal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--azul), var(--dourado), var(--azul));
+}
+
+.paroco-principal-grid {
+    display: grid;
+    grid-template-columns: minmax(190px, 240px) 1fr;
+    gap: 34px;
+    align-items: center;
+}
+
+.paroco-foto-coluna {
+    display: flex;
+    justify-content: center;
+}
+
+.paroco-foto-wrap {
+    position: relative;
+    display: inline-block;
+    width: min(100%, 210px);
+}
+
+.paroco-foto-wrap img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+    border: 4px solid var(--dourado-claro);
+    background: white;
+    box-shadow: 0 15px 35px rgba(11, 143, 192, 0.18);
+    position: relative;
+    z-index: 2;
+}
+
+.paroco-conteudo {
+    text-align: left;
+}
+
+.paroco-badge {
+    display: inline-block;
+    background: var(--fundo-claro);
+    color: var(--azul-escuro);
+    border: 1px solid var(--azul);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.paroco-conteudo h3 {
+    color: var(--azul-escuro);
+    margin: 0 0 10px;
+    font-size: 1.65rem;
+}
+
+.paroco-cargo {
+    margin: 0 0 10px;
+    color: var(--dourado-escuro);
+    font-weight: 700;
+}
+
+.paroco-descricao-principal {
+    margin: 0;
+    color: var(--texto-suave);
+    line-height: 1.7;
+}
+
+.parocos-historico {
+    margin-top: 22px;
+}
+
+.parocos-historico > summary {
+    list-style: none;
+}
+
+.parocos-historico > summary::-webkit-details-marker {
+    display: none;
+}
+
+.parocos-resumo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    background: linear-gradient(135deg, #fdfaf0, #ffffff);
+    border: 1px solid #f0e6c4;
+    border-radius: 16px;
+    padding: 15px 18px;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--azul-escuro);
+    transition: 0.25s;
+}
+
+.parocos-resumo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(212,175,55,0.14);
+    border-color: var(--dourado);
+}
+
+.parocos-resumo i:first-child {
+    color: var(--dourado-escuro);
+    margin-right: 8px;
+}
+
+.parocos-seta {
+    color: var(--azul);
+    transition: transform 0.25s ease;
+}
+
+.parocos-historico[open] .parocos-seta {
+    transform: rotate(180deg);
+}
+
+.parocos-historico-conteudo {
+    padding-top: 18px;
+}
+
+.parocos-historico-texto {
+    margin: 0 0 18px;
+    color: var(--texto-suave);
+    line-height: 1.6;
+}
+
+.parocos-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+}
+
+.paroco-card {
+    background: white;
+    border-radius: 20px;
+    padding: 22px 20px;
+    text-align: center;
+    border: 1px solid #eee;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.paroco-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--azul), var(--dourado), var(--azul));
+}
+
+.paroco-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(14,175,234,0.12);
+}
+
+.paroco-card .paroco-foto-wrap {
+    width: min(100%, 150px);
+    margin: 0 auto 18px;
+}
+
+.paroco-card .moldura-dourada {
+    inset: -12px;
+}
+
+.paroco-status {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #fdfaf0, #ffffff);
+    border: 1px solid #f0e6c4;
+    color: var(--dourado-escuro);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.paroco-card h4 {
+    margin: 0 0 8px;
+    color: var(--azul-escuro);
+    font-size: 1.05rem;
+    line-height: 1.35;
+}
+
+.paroco-periodo {
+    margin: 0 0 10px;
+    color: var(--dourado-escuro);
+    font-weight: 700;
+    font-size: 0.92rem;
+}
+
+.paroco-card p:last-child {
+    margin: 0;
+    color: var(--texto-suave);
+    line-height: 1.6;
+    font-size: 0.92rem;
+}
+
+@media (max-width: 760px) {
+    .paroco-principal {
+        padding: 24px 20px;
+    }
+
+    .paroco-principal-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        text-align: center;
+    }
+
+    .paroco-conteudo {
+        text-align: center;
+    }
+
+    .parocos-resumo {
+        align-items: flex-start;
+    }
+}
+
+
+.grupos-container {
+    max-width: 1100px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.grupos-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: -10px auto 35px;
+    color: var(--texto-suave);
+    line-height: 1.6;
+}
+
+.grupos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.grupo-item {
+    background: white;
+    border-radius: 16px;
+    padding: 22px 18px;
+    text-align: center;
+    border: 1px solid #eee;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--dourado);
+    transition: 0.3s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.grupo-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(14,175,234,0.15);
+    border-top-color: var(--azul);
+}
+
+.grupo-icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fdfaf0, #ffffff);
+    border: 2px solid var(--dourado-claro);
+    color: var(--dourado-escuro);
+    font-size: 1.3rem;
+    transition: 0.3s;
+}
+
+.grupo-item:hover .grupo-icone {
+    border-color: var(--azul);
+    color: var(--azul-escuro);
+    transform: scale(1.05);
+}
+
+.grupo-item h4 {
+    margin: 0;
+    color: var(--azul-escuro);
+    font-size: 0.98rem;
+    line-height: 1.3;
+}
+
+/* ============== CANAIS OFICIAIS (SEM GALERIA ARTIFICIAL DO INSTAGRAM) ============== */
+.redes-container {
+    max-width: 1100px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.redes-intro {
+    max-width: 740px;
+    margin: -8px auto 28px;
+    color: var(--texto-suave);
+    line-height: 1.65;
+}
+
+.redes-destaque {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 26px;
+    border-radius: 22px;
+    overflow: hidden;
+    background: linear-gradient(125deg, #41228c 0%, #873bb5 43%, #e93a81 78%, #f5a649 100%);
+    box-shadow: 0 16px 38px rgba(84, 40, 119, .15);
+    color: #fff;
+    text-align: left;
+    padding: 35px;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.redes-destaque h3 {
+    font-size: clamp(1.55rem, 3vw, 2.1rem);
+    margin: 10px 0 12px;
+    color: white;
+}
+
+.redes-destaque p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 22px;
+    color: rgba(255,255,255,.93);
+}
+
+.redes-perfil {
+    font-size: .85rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: .3px;
+}
+
+.redes-perfil i {
+    margin-right: 8px;
+}
+
+.redes-destaque-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 155px;
+}
+
+.redes-destaque-icon i {
+    font-size: clamp(6rem, 14vw, 10rem);
+    opacity: .85;
+    filter: drop-shadow(0 15px 20px rgba(0,0,0,.15));
+}
+
+.redes-btn {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    color: #482467;
+    background: #fff;
+    border-radius: 28px;
+    text-decoration: none;
+    padding: 12px 21px;
+    font-weight: 800;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.redes-btn:hover, .redes-btn:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0,0,0,.18);
+}
+
+.redes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.rede-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    background: white;
+    border-radius: 18px;
+    padding: 24px;
+    border: 1px solid #edf0f3;
+    border-top: 4px solid var(--dourado);
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+    text-align: left;
+}
+
+.rede-card > i {
+    font-size: 2.1rem;
+    color: var(--azul-escuro);
+}
+
+.rede-card h3 {
+    margin: 3px 0 0;
+    color: var(--azul-escuro);
+    font-size: 1.15rem;
+}
+
+.rede-card p {
+    margin: 0;
+    color: var(--texto-suave);
+    line-height: 1.5;
+    font-size: .91rem;
+    flex: 1;
+}
+
+.rede-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #086896;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.rede-card a:hover {
+    text-decoration: underline;
+}
+
+.redes-nota {
+    color: var(--texto-fraco);
+    font-size: .86rem;
+    margin: 20px auto 0;
+    line-height: 1.5;
+}
+
+.atendimento-secretaria {
+    max-width: 1060px;
+    margin: -44px auto 75px;
+    padding: 25px 20px;
+    border: 1px solid #f0e6c4;
+    background: #fffdf7;
+    border-radius: 18px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.atendimento-secretaria h3 {
+    margin: 0 0 9px;
+    color: var(--azul-escuro);
+}
+
+.atendimento-secretaria p {
+    margin: 4px 0;
+    line-height: 1.65;
+    color: var(--texto-suave);
+}
+
+.atendimento-secretaria a {
+    color: #086896;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .redes-destaque {
+        grid-template-columns: 1fr;
+        padding: 29px 23px;
+    }
+
+    .redes-destaque-icon {
+        display: none;
+    }
+
+    .redes-btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+
+@media (max-width: 380px) {
+    .redes-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.doacao-container {
+    max-width: 1100px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.versiculo-doacao {
+    text-align: center;
+    max-width: 700px;
+    margin: -10px auto 35px;
+    font-style: italic;
+    color: var(--texto-suave);
+    line-height: 1.6;
+    position: relative;
+    padding: 0 30px;
+}
+
+.versiculo-doacao::before, .versiculo-doacao::after {
+    content: "“";
+    color: var(--dourado);
+    font-size: 2.5rem;
+    font-family: Georgia, serif;
+    line-height: 0;
+    position: absolute;
+    top: 12px;
+}
+
+.versiculo-doacao::before {
+    left: 0;
+}
+
+.versiculo-doacao::after {
+    content: "”";
+    right: 0;
+}
+
+.versiculo-doacao cite {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    color: var(--dourado-escuro);
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.doacao-destinos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 45px;
+}
+
+.destino-item {
+    background: linear-gradient(135deg, #fdfaf0, #ffffff);
+    border: 1px solid #f0e6c4;
+    border-radius: 18px;
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.destino-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--dourado), var(--dourado-claro));
+    opacity: .8;
+    transition: 0.3s;
+}
+
+.destino-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(212,175,55,0.18);
+    border-color: var(--dourado);
+}
+
+.destino-item:hover::before {
+    background: linear-gradient(90deg, var(--azul), var(--azul-escuro));
+}
+
+.destino-icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--dourado-claro);
+    color: var(--dourado-escuro);
+    font-size: 1.5rem;
+    margin-bottom: 14px;
+    box-shadow: 0 6px 16px rgba(212,175,55,0.18);
+    transition: 0.3s;
+}
+
+.destino-item:hover .destino-icone {
+    border-color: var(--azul);
+    color: var(--azul-escuro);
+    transform: scale(1.05);
+}
+
+.destino-item h4 {
+    margin: 0 0 8px;
+    color: var(--azul-escuro);
+    font-size: 1.05rem;
+}
+
+.destino-item p {
+    margin: 0;
+    color: var(--texto-fraco);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.doacao-card {
+    background: white;
+    border-radius: 20px;
+    padding: 45px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 40px;
+    align-items: stretch;
+    position: relative;
+    overflow: hidden;
+}
+
+.doacao-card > .doacao-texto, .doacao-card > .qr-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.doacao-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--azul), var(--dourado), var(--azul));
+}
+
+.doacao-texto {
+    text-align: left;
+}
+
+.doacao-eyebrow {
+    display: inline-block;
+    color: var(--dourado-escuro);
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.doacao-texto h3 {
+    color: var(--azul-escuro);
+    font-size: 1.6rem;
+    margin: 0 0 10px;
+    line-height: 1.3;
+}
+
+.doacao-texto > p {
+    color: var(--texto-suave);
+    line-height: 1.6;
+    margin: 0 0 22px;
+}
+
+.doacao-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 18px;
+    background: #f5f7fa;
+    padding: 5px;
+    border-radius: 12px;
+}
+
+.doacao-tab {
+    flex: 1;
+    padding: 10px 14px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--texto-fraco);
+    border-radius: 8px;
+    transition: 0.25s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.doacao-tab i {
+    font-size: 1rem;
+}
+
+.doacao-tab.ativa {
+    background: white;
+    color: var(--azul-escuro);
+    box-shadow: 0 4px 12px rgba(14,175,234,0.15);
+}
+
+.doacao-tab:hover:not(.ativa) {
+    color: var(--azul-escuro);
+}
+
+.doacao-painel {
+    display: none;
+    animation: fadePainel .25s ease;
+}
+
+.doacao-painel.ativo {
+    display: block;
+}
+
+@keyframes fadePainel {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.pix-box {
+    background: linear-gradient(135deg, var(--fundo-claro), #ffffff);
+    border: 2px dashed var(--azul);
+    padding: 18px 20px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.25s;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+.pix-box:hover, .pix-box:focus-visible {
+    background: #e0f4ff;
+    outline: none;
+    border-style: solid;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(14,175,234,0.18);
+}
+
+.pix-icone {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #32BCAD, #2aa498);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(50,188,173,0.35);
+}
+
+.pix-conteudo {
+    flex: 1;
+    min-width: 0;
+}
+
+.pix-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: var(--texto-fraco);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.pix-codigo {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: var(--azul-escuro);
+    display: block;
+    margin-top: 3px;
+    word-break: break-all;
+}
+
+.pix-aviso {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--azul);
+    margin-top: 6px;
+    font-weight: bold;
+    font-size: 0.78rem;
+    letter-spacing: 0.3px;
+}
+
+.dados-bancarios {
+    background: linear-gradient(135deg, #fdfaf0, #ffffff);
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid #f0e6c4;
+    line-height: 1.6;
+}
+
+.banco-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px dashed var(--dourado-claro);
+}
+
+.banco-icone {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--azul);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.banco-cabecalho strong {
+    color: var(--azul-escuro);
+    font-size: 0.95rem;
+    display: block;
+}
+
+.banco-cabecalho span {
+    font-size: 0.8rem;
+    color: var(--texto-fraco);
+}
+
+.banco-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 18px;
+    font-size: 0.9rem;
+}
+
+.banco-grid div {
+    color: #444;
+}
+
+.banco-grid div span {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--texto-fraco);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.banco-favorecido {
+    grid-column: 1 / -1;
+    padding-top: 8px;
+    border-top: 1px solid #f0e6c4;
+    margin-top: 4px;
+}
+
+.qr-wrapper {
+    text-align: center;
+    background: linear-gradient(135deg, #fdfaf0, #ffffff);
+    border: 1px solid #f0e6c4;
+    border-radius: 18px;
+    padding: 28px 20px;
+}
+
+.qr-card-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 14px;
+}
+
+.qr-card {
+    background: white;
+    padding: 14px;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(11,143,192,0.18);
+    display: inline-block;
+    border: 1px solid #f0f0f0;
+    position: relative;
+    z-index: 2;
+}
+
+.qr-card img {
+    width: 190px;
+    height: 190px;
+    display: block;
+    border-radius: 8px;
+}
+
+.qr-moldura {
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--dourado);
+    border-radius: 22px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.qr-moldura::before, .qr-moldura::after {
+    content: "✦";
+    position: absolute;
+    color: var(--dourado);
+    background: linear-gradient(135deg, #fdfaf0, #ffffff);
+    padding: 0 8px;
+    font-size: 14px;
+}
+
+.qr-moldura::before {
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.qr-moldura::after {
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.qr-titulo {
+    display: block;
+    margin-top: 18px;
+    color: var(--azul-escuro);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.qr-legenda {
+    font-size: 0.82rem;
+    color: var(--texto-fraco);
+    margin-top: 4px;
+    font-style: italic;
+}
+
+.qr-passos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.qr-passos span {
+    background: white;
+    color: var(--azul-escuro);
+    padding: 5px 11px;
+    border-radius: 12px;
+    font-size: 0.72rem;
+    font-weight: bold;
+    border: 1px solid var(--fundo-claro);
+}
+
+.qr-passos i {
+    color: var(--dourado);
+    font-size: 0.7rem;
+}
+
+.contato-moderno {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 800px;
+    margin: 40px auto 80px;
+    padding: 0 20px;
+}
+
+.card-contato {
+    background: white;
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card-contato:hover {
+    transform: translateY(-8px);
+}
+
+.card-contato i {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.card-contato h3 {
+    margin-bottom: 10px;
+    color: var(--azul-escuro);
+}
+
+.card-contato p {
+    font-size: 0.9rem;
+    color: var(--texto-fraco);
+    margin-bottom: 15px;
+}
+
+.card-contato a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.whatsapp i {
+    color: #25D366;
+}
+
+.whatsapp a {
+    background: #25D366;
+}
+
+.endereco i {
+    color: var(--azul);
+}
+
+.endereco address {
+    font-style: normal;
+    font-size: 0.9rem;
+    color: var(--texto-fraco);
+}
+
+.mapa-container {
+    max-width: 1100px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.mapa-container iframe {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.btn-maps {
+    background: var(--azul);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-maps:hover {
+    background: var(--azul-escuro);
+}
+
+.rodape {
+    background: linear-gradient(135deg, var(--azul), var(--azul-escuro));
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 60px;
+}
+
+.rodape p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.rodape .dev strong {
+    color: var(--dourado-claro);
+}
+
+/* ============== AVISOS & EVENTOS ============== */
+.avisos-container {
+    max-width: 1100px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.avisos-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: -10px auto 35px;
+    color: var(--texto-suave);
+    line-height: 1.6;
+}
+
+.aviso-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: white;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.tag-festa {
+    background: linear-gradient(135deg, var(--dourado), var(--dourado-escuro));
+}
+
+.tag-evento {
+    background: linear-gradient(135deg, var(--azul), var(--azul-escuro));
+}
+
+.tag-aviso {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.tag-foto {
+    background: linear-gradient(135deg, #8134af, #dd2a7b);
+}
+
+.aviso-destaque {
+    display: grid;
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: 0;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.aviso-destaque::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--azul), var(--dourado), var(--azul));
+    z-index: 3;
+}
+
+/* FESTA DE NOSSA SENHORA DO LIVRAMENTO
+   Mesma moldura dourada da Padroeira, foto inteira e tamanho limitado.
+   Para mudar a altura: edite --foto-festa-altura* no :root, acima. */
+.aviso-destaque-img {
+    position: relative;
+    width: calc(100% - 36px);
+    height: var(--foto-festa-altura);
+    min-height: 0;
+    margin: 18px;
+    padding: 22px;
+    box-sizing: border-box;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e6edf2;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--fundo-claro), #fff);
+    overflow: hidden;
+}
+
+/* Esta estrutura também usa .moldura-dourada, já definida para a Padroeira. */
+.foto-festa-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: calc(100% - 18px);
+    max-height: 100%;
+    min-width: 0;
+}
+
+.foto-festa-wrapper img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: calc(var(--foto-festa-altura) - 70px);
+    object-fit: contain; /* foto sempre completa, sem corte */
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(11, 143, 192, 0.25);
+    position: relative;
+    z-index: 2;
+}
+
+/* Ajusta somente o espaço externo da mesma moldura da Padroeira. */
+.foto-festa-wrapper .moldura-dourada {
+    inset: -11px;
+}
+
+.aviso-destaque-img:focus-visible {
+    outline: 3px solid var(--azul);
+    outline-offset: 3px;
+}
+
+.aviso-destaque-corpo {
+    padding: 40px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.aviso-eyebrow {
+    display: inline-block;
+    color: var(--dourado-escuro);
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.aviso-destaque-corpo h3 {
+    color: var(--azul-escuro);
+    font-size: 1.7rem;
+    margin: 0 0 15px;
+    line-height: 1.3;
+}
+
+.aviso-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 18px;
+    color: var(--texto-fraco);
+    font-size: 0.9rem;
+}
+
+.aviso-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.aviso-meta i {
+    color: var(--dourado);
+}
+
+.aviso-destaque-corpo > p {
+    color: var(--texto-suave);
+    line-height: 1.7;
+    margin: 0 0 22px;
+}
+
+/* Programação da festa - bloco estilizado */
+.programacao-festa {
+    background: linear-gradient(135deg, #fdfaf0, #ffffff);
+    border: 1px solid #f0e6c4;
+    border-left: 4px solid var(--dourado);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin: 0 0 25px;
+}
+
+.programacao-festa > strong {
+    display: block;
+    color: var(--azul-escuro);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--dourado-claro);
+}
+
+.programacao-festa ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.programacao-festa li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--texto-suave);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.programacao-festa li i {
+    color: var(--dourado-escuro);
+    margin-top: 4px;
+    min-width: 16px;
+    text-align: center;
+}
+
+.programacao-festa li b {
+    color: var(--azul-escuro);
+}
+
+.btn-aviso {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--azul), var(--azul-escuro));
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 6px 18px rgba(14,175,234,0.3);
+    transition: 0.3s;
+    width: fit-content;
+    border: none;
+    font-size: 0.95rem;
+    cursor: default;
+}
+
+.btn-aviso[href]:not([href="#"]):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(14,175,234,0.4);
+}
+
+.btn-aviso[href]:not([href="#"]):hover i {
+    transform: translateX(4px);
+}
+
+.btn-aviso i {
+    transition: 0.3s;
+}
+
+.btn-aviso.btn-em-breve {
+    background: linear-gradient(135deg, #adb5bd, #868e96);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    cursor: not-allowed;
+    opacity: 0.95;
+}
+
+.avisos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 22px;
+}
+
+.aviso-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.aviso-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(0,0,0,0.1);
+    border-color: var(--dourado-claro);
+}
+
+.aviso-card-img {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    background: var(--fundo-claro);
+    overflow: hidden;
+}
+
+.aviso-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s;
+}
+
+.aviso-card:hover .aviso-card-img img {
+    transform: scale(1.08);
+}
+
+.aviso-card-corpo {
+    padding: 22px;
+    text-align: left;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.aviso-data {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--dourado-escuro);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.aviso-card-corpo h4 {
+    margin: 0 0 10px;
+    color: var(--azul-escuro);
+    font-size: 1.15rem;
+}
+
+.aviso-card-corpo h5 {
+    margin: 14px 0 8px;
+    color: var(--azul-escuro);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed var(--dourado-claro);
+}
+
+.aviso-card-corpo p {
+    margin: 0 0 10px;
+    color: var(--texto-suave);
+    line-height: 1.6;
+    font-size: 0.92rem;
+}
+
+.aviso-card-corpo p:last-child {
+    margin-bottom: 0;
+}
+
+.aviso-card-corpo ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.aviso-card-corpo ul li {
+    position: relative;
+    padding-left: 20px;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.aviso-card-corpo ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--dourado);
+    box-shadow: 0 0 0 2px var(--fundo-claro);
+}
+
+.aviso-card-corpo ul li strong {
+    color: var(--azul-escuro);
+}
+
+.lei-canonica {
+    margin-top: 14px !important;
+    padding: 10px 12px;
+    background: var(--fundo-claro);
+    border-left: 3px solid var(--azul);
+    border-radius: 6px;
+    font-size: 0.78rem !important;
+    color: var(--texto-fraco) !important;
+    font-style: italic;
+}
+
+/* ============== LIGHTBOX FULLSCREEN COM PINCH-TO-ZOOM ============== */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0,0,0,0.92);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    align-items: center;
+    justify-content: center;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.lightbox-overlay.ativo {
+    display: flex;
+}
+
+.lightbox-overlay img {
+    max-width: 95vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    transform-origin: center center;
+    will-change: transform;
+    transition: none;
+    cursor: grab;
+}
+
+.lightbox-overlay img:active {
+    cursor: grabbing;
+}
+
+.lightbox-fechar {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.4);
+    color: white;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10000;
+    transition: 0.2s;
+    backdrop-filter: blur(4px);
+}
+
+.lightbox-fechar:hover {
+    background: rgba(255,255,255,0.3);
+    transform: scale(1.1);
+}
+
+.lightbox-dica {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.6);
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    pointer-events: none;
+    transition: opacity 0.5s;
+}
+
+.lightbox-dica i {
+    font-size: 1.1rem;
+}
+
+/* Indicador visual de zoom clicável nas imagens */
+.aviso-destaque-img, .aviso-card-img {
+    cursor: zoom-in;
+    position: relative;
+}
+
+.zoom-hint {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.55);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    pointer-events: none;
+    opacity: 0.8;
+    z-index: 2;
+    backdrop-filter: blur(3px);
+}
+
+@media (max-width: 768px) {
+    .topo {
+        position: relative;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 12px;
+        padding: 14px 4%;
+    }
+
+    .container-titulo {
+        width: auto;
+        flex: 1 1 210px;
+        align-items: flex-start;
+        margin-bottom: 0;
+    }
+
+    .nome-site {
+        font-size: 1rem;
+    }
+
+    .menu {
+        flex: 0 0 100%;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 4px;
+        padding: 8px 0 4px;
+    }
+
+    .menu a {
+        font-size: 13px;
+        padding: 8px 9px;
+    }
+
+    .parallax {
+        height: 300px;
+        background-attachment: scroll;
+        background-position: center 65%;
+    }
+
+    .agenda-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .youtube-info {
+        text-align: center;
+        align-items: center;
+        padding: 30px 20px;
+    }
+
+    .youtube-thumb {
+        overflow: hidden;
+    }
+
+    .live-placeholder {
+        position: relative !important;
+        inset: auto !important;
+        padding: 40px 20px !important;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .historia-intro {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px 25px;
+    }
+
+    .historia-stats {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .stat-item {
+        flex: 1;
+        min-width: 100px;
+        padding: 15px 10px;
+    }
+
+    .stat-numero {
+        font-size: 1.6rem;
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item, .timeline-item:nth-child(odd), .timeline-item:nth-child(even) {
+        width: 100%;
+        margin-left: 0;
+        padding: 15px 0 15px 55px;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-data, .timeline-item:nth-child(even) .timeline-data {
+        left: 20px;
+        right: auto;
+        transform: translateX(-50%);
+        top: 25px;
+    }
+
+    .subtitulo-historia::before, .subtitulo-historia::after {
+        max-width: 30px;
+    }
+
+    .doacao-destinos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .destino-item {
+        padding: 22px 14px;
+    }
+
+    .destino-icone {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+
+    .destino-item h4 {
+        font-size: 0.95rem;
+    }
+
+    .destino-item p {
+        font-size: 0.82rem;
+    }
+
+    .doacao-card {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 30px 22px;
+        text-align: center;
+    }
+
+    .doacao-texto {
+        text-align: center;
+    }
+
+    .doacao-tabs {
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 18px;
+    }
+
+    .pix-box {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .pix-conteudo {
+        text-align: center;
+    }
+
+    .qr-wrapper {
+        padding: 24px 16px;
+    }
+
+    .banco-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .banco-cabecalho {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+
+    /* PADROEIRA mobile - foto reduzida e centralizada */
+    .padroeira-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 18px;
+        gap: 22px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .padroeira-foto {
+        min-width: 0;
+        width: 100%;
+        padding: 4px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .padroeira-foto-wrapper {
+        max-width: 200px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .padroeira-foto-wrapper img {
+        width: 100%;
+        height: auto;
+        max-height: 280px;
+        object-fit: contain;
+    }
+
+    .moldura-dourada {
+        inset: -8px;
+    }
+
+    .padroeira-info {
+        text-align: center;
+        min-width: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .padroeira-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .padroeira-info > * {
+        width: 100%;
+    }
+
+    .legenda-padroeira, .texto-devocional p {
+        text-align: center;
+    }
+
+    .badge-padroeira {
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+    }
+
+    .texto-devocional p {
+        word-wrap: break-word;
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-content: center;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .info-grid .info-item:nth-child(3):last-child {
+        grid-column: 1 / -1;
+        max-width: 60%;
+        margin: 0 auto;
+    }
+
+    .devocao-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .devocao-corpo {
+        padding: 25px 20px;
+    }
+
+    .devocao-oracao .devocao-corpo .estrofe {
+        text-align: center;
+    }
+
+    .refrao::before, .refrao::after {
+        display: none;
+    }
+
+    .titulo {
+        scroll-margin-top: 200px;
+    }
+
+    /* AVISOS mobile (corrigido: faltava o @media) */
+    .aviso-destaque {
+        grid-template-columns: 1fr;
+    }
+
+    .aviso-destaque-img {
+        height: var(--foto-festa-altura-celular);
+        width: calc(100% - 36px);
+        min-height: 0;
+        aspect-ratio: auto;
+        margin: 18px 18px 0;
+    }
+
+    .foto-festa-wrapper img {
+        max-height: calc(var(--foto-festa-altura-celular) - 70px);
+    }
+
+    .aviso-destaque-corpo {
+        padding: 28px 22px;
+    }
+
+    .aviso-destaque-corpo h3 {
+        font-size: 1.35rem;
+    }
+
+    .aviso-meta {
+        gap: 12px;
+        font-size: 0.85rem;
+    }
+
+    .programacao-festa {
+        padding: 16px 18px;
+    }
+
+    .programacao-festa li {
+        font-size: 0.88rem;
+    }
+
+    .btn-aviso {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.9rem;
+        padding: 12px 20px;
+    }
+
+}
+
+/* Em telas muito pequenas, foto da padroeira ainda menor */
+@media (max-width: 380px) {
+    .padroeira-foto-wrapper {
+        max-width: 170px;
+    }
+
+    .padroeira-foto-wrapper img {
+        max-height: 240px;
+    }
+
+}
+
+#btn-teste-sino {
+    display: none;
+}
+
+body.debug #btn-teste-sino {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    padding: 15px 20px;
+    background: var(--dourado);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.dev a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+    padding: 2px 6px;
+    border-radius: 8px;
+}
+
+.dev a:hover {
+    color: #ffd700;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 0 10px rgba(255,215,0,0.6);
+    transform: scale(1.08);
+}
+
+/* ============== PRELOADER / SPLASH SCREEN ============== */
+.preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: linear-gradient(135deg, #0a1628 0%, #0d2137 40%, #122a45 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.preloader.esconder {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.preloader-logo-wrap {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preloader-logo-wrap img {
+    width: 90px;
+    height: auto;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 0 8px rgba(212,175,55,0.3));
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+/* Anel dourado girando */
+.preloader-anel {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top: 3px solid var(--dourado, #d4af37);
+    border-right: 3px solid var(--dourado-claro, #f2d27a);
+    animation: preloader-girar 1.2s linear infinite;
+    box-shadow: 0 0 20px rgba(212,175,55,0.15);
+}
+
+.preloader-anel2 {
+    position: absolute;
+    inset: 8px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-bottom: 2px solid var(--dourado-escuro, #b8860b);
+    border-left: 2px solid var(--dourado, #d4af37);
+    animation: preloader-girar 1.8s linear infinite reverse;
+    opacity: 0.7;
+}
+
+@keyframes preloader-girar {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+.preloader-texto {
+    margin-top: 28px;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Estado: brilho forte ao concluir */
+.preloader.brilhar .preloader-logo-wrap img {
+    filter: drop-shadow(0 0 30px rgba(212,175,55,1)) drop-shadow(0 0 60px rgba(242,210,122,0.8)) brightness(1.3);
+    transform: scale(1.15);
+}
+
+.preloader.brilhar .preloader-anel,
+        .preloader.brilhar .preloader-anel2 {
+    animation: none;
+    border-color: var(--dourado-claro, #f2d27a);
+    box-shadow: 0 0 40px rgba(212,175,55,0.6);
+    transition: all 0.4s ease;
+}
+
+.preloader.brilhar .preloader-texto {
+    color: var(--dourado-claro, #f2d27a);
+    transition: color 0.3s;
+}
+
+/* Navegação por teclado e respeito à preferência por menos animações */
+.skip-link {
+    position: absolute;
+    left: 12px;
+    top: -70px;
+    z-index: 100001;
+    background: #fff;
+    color: #06496e;
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    top: 12px;
+}
+
+@media (max-width: 600px) {
+    .altares-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .agenda-item.hoje {
+        transform: none;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+
+}
+
+/* Contato: duas informações únicas, sem repetir os cards de redes sociais. */
+@media (max-width: 560px) {
+    .contato-moderno {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+}
+
+    </style>
     <noscript><style>.preloader { display: none !important; }</style></noscript>
 </head>
 <body id="topo">
@@ -424,14 +3785,61 @@
             <h2 class="titulo" id="paroco">Nosso Pároco</h2>
             <span class="linha-azul" aria-hidden="true"></span>
             <div class="padre-container">
-                <div class="padre-card">
-                    <img data-foto="paroco" alt="Padre Adeildo Sebastião Ferreira" width="180" height="180" loading="lazy">
-                    <div class="padre-info">
-                        <h3>Pe. Adeildo Sebastião Ferreira</h3>
-                        <p><strong>Pároco</strong> da Paróquia Nossa Senhora do Livramento</p>
-                        <p>Responsável pela condução espiritual da comunidade, celebrações e atividades pastorais da paróquia.</p>
+                <p class="parocos-intro">Conheça o pároco atual e, ao clicar, reveja em cards os sacerdotes que também marcaram a história da paróquia. Cada card usa a mesma moldura dourada da seção da Padroeira.</p>
+
+                <article class="paroco-principal">
+                    <div class="paroco-principal-grid">
+                        <div class="paroco-foto-coluna">
+                            <div class="paroco-foto-wrap">
+                                <img data-foto="paroco_atual" alt="Padre Adeildo Sebastião Ferreira" width="210" height="210" loading="lazy">
+                                <div class="moldura-dourada" aria-hidden="true"></div>
+                            </div>
+                        </div>
+
+                        <div class="paroco-conteudo">
+                            <span class="paroco-badge">✦ Pároco Atual ✦</span>
+                            <h3>Pe. Adeildo Sebastião Ferreira</h3>
+                            <p class="paroco-cargo"><strong>Pároco</strong> da Paróquia Nossa Senhora do Livramento</p>
+                            <p class="paroco-descricao-principal">Responsável pela condução espiritual da comunidade, celebrações e atividades pastorais da paróquia.</p>
+
+                            <details class="parocos-historico">
+                                <summary class="parocos-resumo">
+                                    <span><i class="fas fa-users" aria-hidden="true"></i> Clique para ver os outros párocos</span>
+                                    <span class="parocos-seta" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                                </summary>
+
+                                <div class="parocos-historico-conteudo">
+                                    <p class="parocos-historico-texto">Os cards abaixo já ficam prontos para cadastro. Basta trocar a foto no catálogo do topo do arquivo e editar nome, período e descrição de cada pároco.</p>
+
+                                    <!-- MODELO: duplique um article.paroco-card para adicionar mais párocos antigos. -->
+                                    <div class="parocos-lista">
+                                        <article class="paroco-card">
+                                            <div class="paroco-foto-wrap">
+                                                <img data-foto="paroco_exemplo_1" alt="Nome do pároco anterior" width="150" height="150" loading="lazy">
+                                                <div class="moldura-dourada" aria-hidden="true"></div>
+                                            </div>
+                                            <span class="paroco-status">Pároco anterior</span>
+                                            <h4>Nome do pároco anterior</h4>
+                                            <p class="paroco-periodo">Ex.: 2018 a 2024</p>
+                                            <p>Escreva aqui uma breve lembrança, contribuição ou período de atuação deste pároco na comunidade.</p>
+                                        </article>
+
+                                        <article class="paroco-card">
+                                            <div class="paroco-foto-wrap">
+                                                <img data-foto="paroco_exemplo_2" alt="Nome do outro pároco anterior" width="150" height="150" loading="lazy">
+                                                <div class="moldura-dourada" aria-hidden="true"></div>
+                                            </div>
+                                            <span class="paroco-status">Pároco anterior</span>
+                                            <h4>Nome do outro pároco</h4>
+                                            <p class="paroco-periodo">Ex.: 2010 a 2018</p>
+                                            <p>Adicione aqui outra descrição curta sobre o trabalho pastoral, o período e algum destaque da sua missão.</p>
+                                        </article>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 
@@ -758,6 +4166,463 @@
         </div>
     </div>
     <!-- FUNCIONALIDADES: scripts separados. As fotos são carregadas do catálogo acima. -->
-    <script src="js/script.js" defer></script>
+    <script>
+/* ================================================================
+   FOTOS DO SITE — NÃO EDITE O NOME DAS FOTOS NESTE JAVASCRIPT.
+   Todas as imagens são configuradas no CATÁLOGO DE FOTOS,
+   bem no início do arquivo index.html.
+   ================================================================ */
+(function aplicarCatalogoDeFotos() {
+    const bloco = document.getElementById('catalogo-de-fotos');
+    if (!bloco) return;
+
+    let fotos;
+    try {
+        fotos = JSON.parse(bloco.textContent);
+    } catch (erro) {
+        console.error('Catálogo de fotos inválido em index.html:', erro);
+        return;
+    }
+
+    function buscarFoto(chave) {
+        const nome = fotos[chave];
+        if (typeof nome !== 'string' || !nome.trim()) {
+            console.warn('Foto não encontrada no catálogo:', chave);
+            return null;
+        }
+        return nome.trim();
+    }
+
+    document.querySelectorAll('img[data-foto]').forEach(function(img) {
+        const nome = buscarFoto(img.dataset.foto);
+        if (nome) img.setAttribute('src', nome);
+    });
+
+    document.querySelectorAll('[data-foto-fundo]').forEach(function(elemento) {
+        const nome = buscarFoto(elemento.dataset.fotoFundo);
+        if (nome) elemento.style.backgroundImage = 'url(' + JSON.stringify(nome) + ')';
+    });
+
+    document.querySelectorAll('[data-lightbox-foto]').forEach(function(elemento) {
+        const nome = buscarFoto(elemento.dataset.lightboxFoto);
+        if (nome) elemento.setAttribute('data-lightbox', nome);
+    });
+
+    // Ícone do navegador e imagem de compartilhamento acompanham a logo.
+    const brasao = buscarFoto('brasao');
+    if (brasao) {
+        const icone = document.querySelector('link[rel="icon"]');
+        const imagemSocial = document.querySelector('meta[property="og:image"]');
+        if (icone) icone.setAttribute('href', brasao);
+        if (imagemSocial) imagemSocial.setAttribute('content', brasao);
+    }
+})();
+
+/* ================================================================
+   PARÓQUIA NOSSA SENHORA DO LIVRAMENTO — FUNCIONALIDADES
+   ================================================================
+   As informações do site (fotos, textos, eventos e horários) ficam
+   no index.html. O visual fica em css/estilos.css.
+
+   Conteúdo deste arquivo:
+     1. Missas, doações, ano, sino e comparação dos altares
+     2. Galeria de fotos (zoom e ampliação)
+     3. Menu horizontal
+     4. Tela de carregamento
+   ================================================================ */
+
+(function () {
+        'use strict';
+
+        if (new URLSearchParams(location.search).has('debug')) {
+            document.body.classList.add('debug');
+        }
+
+        const ano = document.getElementById('ano-atual');
+        if (ano) ano.textContent = new Date().getFullYear();
+
+        const tabs = document.querySelectorAll('.doacao-tab');
+        const paineis = document.querySelectorAll('.doacao-painel');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const alvo = tab.dataset.tab;
+                tabs.forEach(t => {
+                    const ativa = t === tab;
+                    t.classList.toggle('ativa', ativa);
+                    t.setAttribute('aria-selected', ativa ? 'true' : 'false');
+                });
+                paineis.forEach(p => p.classList.toggle('ativo', p.dataset.painel === alvo));
+            });
+        });
+
+        const btnPix = document.getElementById('btn-pix');
+        if (btnPix) {
+            btnPix.addEventListener('click', async function () {
+                const chave = document.getElementById('chave-pix').textContent.trim();
+                const aviso = btnPix.querySelector('.pix-aviso');
+                const original = aviso.innerHTML;
+                try {
+                    await navigator.clipboard.writeText(chave);
+                    aviso.innerHTML = '✅ CHAVE COPIADA!';
+                    setTimeout(() => { aviso.innerHTML = original; }, 2000);
+                } catch (e) {
+                    alert('Chave PIX: ' + chave);
+                }
+            });
+        }
+
+        let tocandoAgora = false;
+        function tocarSino(vezes) {
+            if (tocandoAgora) return;
+            tocandoAgora = true;
+            const somSino = document.getElementById('som-sino');
+            let contador = 0;
+            (function tocarBatida() {
+                if (contador < vezes) {
+                    somSino.currentTime = 0;
+                    somSino.play().catch(() => {});
+                    contador++;
+                    setTimeout(tocarBatida, 3000);
+                } else {
+                    tocandoAgora = false;
+                }
+            })();
+        }
+
+        const btnTeste = document.getElementById('btn-teste-sino');
+        if (btnTeste) btnTeste.addEventListener('click', () => tocarSino(4));
+
+        setInterval(() => {
+            const agora = new Date();
+            if (agora.getMinutes() === 0 && agora.getSeconds() === 0) {
+                let batidas = agora.getHours() % 12;
+                if (batidas === 0) batidas = 12;
+                tocarSino(batidas);
+            }
+        }, 1000);
+
+        const hoje = new Date();
+        const diaSemana = hoje.getDay();
+        const ehPrimeiraSemana = hoje.getDate() <= 7;
+        document.querySelectorAll('.agenda-item').forEach(card => {
+            const dia = parseInt(card.dataset.dia, 10);
+            const apenasPrimeira = card.dataset.primeiraDoMes === 'true';
+            if (dia === diaSemana) {
+                if (apenasPrimeira && !ehPrimeiraSemana) return;
+                card.classList.add('hoje');
+            }
+        });
+
+        const slider = document.getElementById('slider');
+        const restaurada = document.getElementById('restaurada');
+        const imgInterna = restaurada ? restaurada.querySelector('img') : null;
+        if (slider && restaurada && imgInterna) {
+            const ajustarTamanho = () => { imgInterna.style.width = slider.offsetWidth + 'px'; };
+            const moverDivisor = (e) => {
+                const rect = slider.getBoundingClientRect();
+                const clientX = e.clientX || (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
+                const x = clientX - rect.left;
+                const percentual = Math.min(Math.max((x / rect.width) * 100, 0), 100);
+                restaurada.style.width = percentual + '%';
+            };
+            ajustarTamanho();
+            window.addEventListener('load', ajustarTamanho);
+            window.addEventListener('resize', ajustarTamanho);
+            slider.addEventListener('mousemove', moverDivisor);
+            slider.addEventListener('touchmove', moverDivisor, { passive: true });
+        }
+    })();
+
+/* ============== LIGHTBOX COM PINCH-TO-ZOOM ============== */
+    (function() {
+        const overlay = document.getElementById('lightbox-overlay');
+        const lbImg = document.getElementById('lightbox-img');
+        const btnFechar = document.getElementById('lightbox-fechar');
+        const dica = document.getElementById('lightbox-dica');
+        if (!overlay || !lbImg) return;
+
+        let scale = 1, posX = 0, posY = 0;
+        let startScale = 1, startDist = 0;
+        let startX = 0, startY = 0, startPosX = 0, startPosY = 0;
+        let isDragging = false;
+        let ultimoAcionador = null;
+        let dicaTimer;
+
+        function aplicarTransform() {
+            lbImg.style.transform = 'translate(' + posX + 'px, ' + posY + 'px) scale(' + scale + ')';
+        }
+
+        function resetar() {
+            scale = 1; posX = 0; posY = 0;
+            aplicarTransform();
+        }
+
+        function abrir(src, alt, acionador) {
+            ultimoAcionador = acionador || null;
+            lbImg.src = src;
+            lbImg.alt = alt || '';
+            resetar();
+            overlay.classList.add('ativo');
+            overlay.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            btnFechar.focus();
+            // Mostrar dica e esconder depois de 3s
+            if (dica) {
+                dica.style.opacity = '1';
+                clearTimeout(dicaTimer);
+                dicaTimer = setTimeout(function() { dica.style.opacity = '0'; }, 3000);
+            }
+        }
+
+        function fechar() {
+            overlay.classList.remove('ativo');
+            overlay.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            lbImg.src = '';
+            if (ultimoAcionador) ultimoAcionador.focus();
+        }
+
+        // Abrir ao clicar nas imagens com data-lightbox
+        document.querySelectorAll('[data-lightbox]').forEach(function(el) {
+            function ampliar(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                abrir(el.getAttribute('data-lightbox'), el.getAttribute('data-alt'), el);
+            }
+            el.addEventListener('click', ampliar);
+            el.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') ampliar(e);
+            });
+        });
+
+        // Fechar
+        btnFechar.addEventListener('click', fechar);
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) fechar();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && overlay.classList.contains('ativo')) fechar();
+        });
+
+        // Distância entre dois toques
+        function getDist(touches) {
+            var dx = touches[0].clientX - touches[1].clientX;
+            var dy = touches[0].clientY - touches[1].clientY;
+            return Math.sqrt(dx * dx + dy * dy);
+        }
+
+        // Centro entre dois toques
+        function getCenter(touches) {
+            return {
+                x: (touches[0].clientX + touches[1].clientX) / 2,
+                y: (touches[0].clientY + touches[1].clientY) / 2
+            };
+        }
+
+        // TOUCH — Pinch-to-zoom + drag com um dedo
+        lbImg.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            if (e.touches.length === 2) {
+                startDist = getDist(e.touches);
+                startScale = scale;
+            } else if (e.touches.length === 1) {
+                isDragging = true;
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+                startPosX = posX;
+                startPosY = posY;
+            }
+        }, { passive: false });
+
+        lbImg.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+            if (e.touches.length === 2) {
+                var dist = getDist(e.touches);
+                scale = Math.min(Math.max(startScale * (dist / startDist), 1), 6);
+                aplicarTransform();
+                if (dica) dica.style.opacity = '0';
+            } else if (e.touches.length === 1 && isDragging && scale > 1) {
+                posX = startPosX + (e.touches[0].clientX - startX);
+                posY = startPosY + (e.touches[0].clientY - startY);
+                aplicarTransform();
+            }
+        }, { passive: false });
+
+        lbImg.addEventListener('touchend', function(e) {
+            if (e.touches.length < 2) {
+                startDist = 0;
+            }
+            if (e.touches.length === 0) {
+                isDragging = false;
+                // Se o zoom voltou a 1, centralizar
+                if (scale <= 1.05) {
+                    scale = 1; posX = 0; posY = 0;
+                    aplicarTransform();
+                }
+            }
+        });
+
+        // MOUSE — scroll para zoom + drag
+        var mouseDown = false, mStartX = 0, mStartY = 0, mStartPosX = 0, mStartPosY = 0;
+
+        overlay.addEventListener('wheel', function(e) {
+            if (!overlay.classList.contains('ativo')) return;
+            e.preventDefault();
+            var delta = e.deltaY > 0 ? 0.9 : 1.1;
+            scale = Math.min(Math.max(scale * delta, 1), 6);
+            if (scale <= 1.05) { scale = 1; posX = 0; posY = 0; }
+            aplicarTransform();
+        }, { passive: false });
+
+        lbImg.addEventListener('mousedown', function(e) {
+            if (scale > 1) {
+                mouseDown = true;
+                mStartX = e.clientX;
+                mStartY = e.clientY;
+                mStartPosX = posX;
+                mStartPosY = posY;
+                e.preventDefault();
+            }
+        });
+
+        window.addEventListener('mousemove', function(e) {
+            if (mouseDown) {
+                posX = mStartPosX + (e.clientX - mStartX);
+                posY = mStartPosY + (e.clientY - mStartY);
+                aplicarTransform();
+            }
+        });
+
+        window.addEventListener('mouseup', function() { mouseDown = false; });
+
+        // Duplo toque para resetar zoom
+        var lastTap = 0;
+        lbImg.addEventListener('touchend', function(e) {
+            var now = Date.now();
+            if (now - lastTap < 300 && e.touches.length === 0) {
+                if (scale > 1.1) {
+                    resetar();
+                } else {
+                    scale = 2.5; posX = 0; posY = 0;
+                    aplicarTransform();
+                }
+            }
+            lastTap = now;
+        });
+
+        // Duplo clique mouse
+        lbImg.addEventListener('dblclick', function() {
+            if (scale > 1.1) { resetar(); } else { scale = 2.5; posX = 0; posY = 0; aplicarTransform(); }
+        });
+    })();
+
+/* Menu: rolagem suave automática perto da borda esquerda/direita no desktop. */
+    (function () {
+        var menu = document.querySelector('.menu');
+        if (!menu) return;
+
+        var animacao = 0;
+        var velocidade = 0;
+        var borda = 105; // Distância em pixels para começar a revelar os próximos itens.
+        var reduzirMovimento = window.matchMedia('(prefers-reduced-motion: reduce)');
+        var mouseFino = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+        function parar() {
+            velocidade = 0;
+            if (animacao) cancelAnimationFrame(animacao);
+            animacao = 0;
+        }
+
+        function mover() {
+            if (!velocidade || !mouseFino.matches) { parar(); return; }
+            var antes = menu.scrollLeft;
+            menu.scrollLeft += velocidade;
+            if (Math.abs(menu.scrollLeft - antes) < 0.01) { parar(); return; }
+            animacao = requestAnimationFrame(mover);
+        }
+
+        function aoMoverMouse(evento) {
+            if (!mouseFino.matches || menu.scrollWidth <= menu.clientWidth + 1) {
+                parar(); return;
+            }
+            var area = menu.getBoundingClientRect();
+            var distanciaEsquerda = evento.clientX - area.left;
+            var distanciaDireita = area.right - evento.clientX;
+            var zona = Math.min(borda, area.width / 3);
+            var proporcao = 0;
+            var direcao = 0;
+
+            if (distanciaDireita < zona) {
+                direcao = 1;
+                proporcao = (zona - distanciaDireita) / zona;
+            } else if (distanciaEsquerda < zona) {
+                direcao = -1;
+                proporcao = (zona - distanciaEsquerda) / zona;
+            }
+
+            if (!direcao) { parar(); return; }
+            // Movimento progressivo, mais rápido ao se aproximar da borda.
+            velocidade = direcao * (1 + proporcao * (reduzirMovimento.matches ? 4 : 11));
+            if (!animacao) animacao = requestAnimationFrame(mover);
+        }
+
+        menu.addEventListener('pointermove', function (evento) {
+            if (evento.pointerType === 'mouse') aoMoverMouse(evento);
+        });
+        menu.addEventListener('pointerleave', parar);
+        menu.addEventListener('pointerdown', parar);
+        window.addEventListener('blur', parar);
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) parar();
+        });
+
+        // Navegação por Tab: exibe o link focado mesmo que esteja fora da tela.
+        menu.addEventListener('focusin', function (evento) {
+            parar();
+            if (evento.target.matches('a')) {
+                evento.target.scrollIntoView({block: 'nearest', inline: 'nearest', behavior: 'auto'});
+            }
+        });
+    })();
+
+/* ============== PRELOADER CONTROLLER ============== */
+    (function() {
+        var pre = document.getElementById('preloader');
+        if (!pre) return;
+
+        var iniciandoSaida = false;
+        function concluir() {
+            if (iniciandoSaida) return;
+            iniciandoSaida = true;
+            // 1. Brilho forte
+            pre.classList.add('brilhar');
+            // 2. Após o brilho, esconde
+            setTimeout(function() {
+                pre.classList.add('esconder');
+                // 3. Remove do DOM após a transição
+                setTimeout(function() {
+                    pre.remove();
+                }, 700);
+            }, 800);
+        }
+
+        // Esperar tudo carregar (imagens, fontes, etc)
+        window.addEventListener('load', function() {
+            // Garante um mínimo de 1.2s de exibição para não piscar
+            var tempoMin = 1200;
+            var inicio = performance.timing ? performance.timing.navigationStart : (Date.now() - 1000);
+            var passado = Date.now() - inicio;
+            var restante = Math.max(tempoMin - passado, 0);
+            setTimeout(concluir, restante);
+        });
+
+        // Fallback: se por algum motivo o load não dispara em 6s
+        setTimeout(function() {
+            if (pre.parentNode) concluir();
+        }, 6000);
+    })();
+
+
+    </script>
 </body>
 </html>
