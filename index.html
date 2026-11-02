@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paróquia Nossa Senhora do Livramento - Arcoverde/PE</title>
+    <meta name="description" content="Paróquia Nossa Senhora do Livramento em Arcoverde - horários de missas, transmissões ao vivo, história e contato.">
+    <meta name="keywords" content="igreja Arcoverde, missa Arcoverde, Nossa Senhora do Livramento, paróquia">
+    <!-- Configure a URL canônica apenas após confirmar o endereço de publicação definitivo.
+         Ex.: <link rel="canonical" href="https://SEU-DOMINIO/"> -->
+
+    <meta property="og:title" content="Paróquia Nossa Senhora do Livramento - Arcoverde/PE">
+    <meta property="og:description" content="Horários de missas, transmissões ao vivo, história e contato.">
+    <meta property="og:image" content="LogoBrasaoDaParoquia.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/png" href="LogoBrasaoDaParoquia.png">
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"Church",
+      "name":"Paróquia Nossa Senhora do Livramento",
+      "image":"LogoBrasaoDaParoquia.png",
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Praça do Livramento, s/n",
+        "addressLocality":"Arcoverde",
+        "addressRegion":"PE",
+        "addressCountry":"BR"
+      },
+      "telephone":"+5587991587001",
+      "sameAs":[
+        "https://www.instagram.com/paroquiadolivramento/",
+        "https://www.facebook.com/pnslivramento",
+        "https://www.youtube.com/@PascomLivramento",
+        "https://www.whatsapp.com/channel/0029VaXvKtUDp2Q21fRl7R1A"
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
+    <!-- ESTILOS: edite as cores e o tamanho da foto em css/estilos.css -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <noscript><style>.preloader { display: none !important; }</style></noscript>
+</head>
+<body id="topo">
+    <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+    <!-- Preloader / Splash Screen -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-logo-wrap">
+            <div class="preloader-anel"></div>
+            <div class="preloader-anel2"></div>
+            <img src="LogoBrasaoDaParoquia.png" alt="Brasão da Paróquia" width="90" height="90">
+        </div>
+        <p class="preloader-texto">Carregando...</p>
+    </div>
+
+    <button id="btn-teste-sino" type="button" aria-label="Testar 4 badaladas do sino">🔔 Testar 4 Badaladas</button>
+    <audio id="som-sino" src="Somsinohorafundo.mp3" preload="auto"></audio>
+
+    <header class="topo">
+        <img src="LogoBrasaoDaParoquia.png" alt="Brasão da Paróquia Nossa Senhora do Livramento" class="logo" width="50" height="50">
+        <div class="container-titulo">
+            <h1 class="nome-site">Paróquia Nossa Senhora do Livramento</h1>
+            <p class="localizacao-topo">Arcoverde - PE</p>
+        </div>
+        <nav class="menu" aria-label="Menu principal">
+            <a href="#topo">Início</a>
+            <a href="#missas">Missas</a>
+            <a href="#ao-vivo">Ao Vivo</a>
+            <a href="#a-igreja">História</a>
+            <a href="#padroeira">Padroeira</a>
+            <a href="#paroco">Pároco</a>
+            <a href="#grupos">Grupos</a>
+            <a href="#redes">Redes Sociais</a>
+            <a href="#avisos">Avisos</a>
+            <a href="#doacao">Doação</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main id="conteudo">
+        <section class="parallax" aria-label="Boas-vindas">
+            <div class="overlay">
+                <h2>Paróquia Nossa Senhora do Livramento</h2>
+                <p class="subtitulo-parallax">Sejam bem-vindos</p>
+            </div>
+        </section>
+
+        <!-- HORÁRIOS: altere os blocos agenda-item abaixo para atualizar as missas. -->
+        <section class="missa-container" aria-labelledby="missas">
+            <h2 class="titulo" id="missas">Santa Missa</h2>
+            <span class="linha-azul" aria-hidden="true"></span>
+            <p style="margin: -5px auto 30px; color: var(--texto-suave); max-width: 700px; line-height: 1.5;">
+                Horários habituais sujeitos a alterações em solenidades e eventos. Confirme com a secretaria paroquial.
+            </p>
+            <div class="agenda">
+                <div class="agenda-grid">
+                    <div class="agenda-item" data-dia="2">
+                        <span class="dia">Terça-feira</span>
+                        <span class="hora">19h</span>
+                        <span class="local-missa">Matriz do Livramento</span>
+                    </div>
+                    <div class="agenda-item" data-dia="4">
+                        <span class="dia">Quinta-feira</span>
+                        <span class="local-missa" style="font-weight:bold; color:var(--dourado);">Quinta Eucarística</span>
+                        <div class="exposicao-box">
+                            <strong>Exposição do Santíssimo</strong>
+                            <span>07h30 às 16h</span>
+                        </div>
+                        <span class="hora">17h</span>
+                        <span class="local-missa">Matriz do Livramento</span>
+                    </div>
+                    <div class="agenda-item destaque-card" data-dia="5" data-primeira-do-mes="true">
+                        <span class="dia">1ª Sexta do Mês</span>
+                        <span class="local-missa">Missa do Sagrado Coração</span>
+                        <span class="hora">19h</span>
+                        <span class="local-missa">Matriz do Livramento</span>
+                    </div>
+                    <div class="agenda-item" data-dia="6">
+                        <span class="dia">Sábado</span>
+                        <span class="hora">16h30</span>
+                        <span class="local-missa">Com. São Francisco | Sucupira</span>
+                        <hr class="separador-card">
+                        <span class="hora">19h</span>
+                        <span class="local-missa">Matriz do Livramento</span>
+                    </div>
+                    <div class="agenda-item" data-dia="0">
+                        <span class="dia">Domingo</span>
+                        <span class="hora">09h</span>
+                        <span class="local-missa">Matriz do Livramento</span>
+                        <hr class="separador-card">
+                        <span class="hora">19h</span>
+                        <span class="local-missa">Matriz do Livramento</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section aria-labelledby="ao-vivo">
+            <h2 class="titulo" id="ao-vivo">Transmissões e Celebrações</h2>
+            <span class="linha-azul" aria-hidden="true"></span>
+            <div class="youtube-section">
+                <div class="youtube-thumb" style="min-height: 290px; padding: 25px; box-sizing: border-box;">
+                    <a href="https://www.youtube.com/@PascomLivramento/streams"
+                       target="_blank" rel="noopener noreferrer" aria-label="Ver as transmissões no canal oficial da PASCOM"
+                       style="color: white; text-decoration: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 15px; text-align: center;">
+                        <i class="fab fa-youtube" style="font-size: 6rem; color: #ff3b3b;" aria-hidden="true"></i>
+                        <strong style="font-size: 1.15rem;">PASCOM Livramento</strong>
+                        <span style="font-size: .9rem; color: #e2e9f4;">Transmissões, missas e celebrações publicadas</span>
+                        <span style="font-weight: 700; font-size: .86rem; color: #f2d27a;">Acessar transmissões <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+                    </a>
+                </div>
+                <div class="youtube-info">
+                    <span class="live-badge" style="background: #e7f5ff; color: #096b9b;">Canal oficial da PASCOM</span>
+                    <h3>Participe, mesmo à distância</h3>
+                    <span class="live-horario">Celebrações e momentos de fé</span>
+                    <p>Assista às transmissões e aos vídeos no YouTube da paróquia. Consulte a página de transmissões para saber se há uma celebração acontecendo neste momento.</p>
+                    <a href="https://www.youtube.com/@PascomLivramento/streams" target="_blank" rel="noopener noreferrer" class="btn-assista">
+                        <i class="fab fa-youtube" aria-hidden="true"></i> Ver transmissões
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section aria-labelledby="a-igreja">
+            <h2 class="titulo" id="a-igreja">História da Igreja</h2>
+            <span class="linha-azul" aria-hidden="true"></span>
+
+            <div class="historia-wrapper">
+                <div class="historia-intro">
+                    <div class="historia-intro-texto">
+                        <span class="intro-eyebrow">Mais de 100 anos de fé</span>
+                        <h3>Uma história que se confunde com a de Arcoverde</h3>
+                        <p>A Paróquia de Nossa Senhora do Livramento foi criada em <strong>21 de agosto de 1919</strong> por Dom José Antônio de Oliveira Lopes, no território da Diocese de Pesqueira. Suas raízes remontam a <strong>1865</strong>, quando uma imagem vinda de Portugal iniciou a devoção no sertão pernambucano.</p>
+                        <p>Ao longo dos séculos, a paróquia cresceu junto com a cidade, tornando-se o coração espiritual de Arcoverde.</p>
+                    </div>
+                    <div class="historia-stats">
+                        <div class="stat-item">
+                            <span class="stat-numero">1865</span>
+                            <span class="stat-label">Início da Devoção</span>
+                        </div>
+                        <div class="stat-item destaque">
+                            <span class="stat-numero">1919</span>
+                            <span class="stat-label">Criação da Paróquia</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-numero">100+</span>
+                            <span class="stat-label">Anos de História</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-bloco">
+                    <h3 class="subtitulo-historia"><span>Marcos Históricos</span></h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-data">1865</div>
+                            <div class="timeline-conteudo">
+                                <h4>Origem da Devoção</h4>
+                                <p>Uma imagem trazida de Portugal por um fazendeiro é instalada na antiga Fazenda Olhos d'Água dos Bredos, dando início à veneração a Nossa Senhora do Livramento.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-data">1919</div>
+                            <div class="timeline-conteudo">
+                                <h4>Criação Oficial da Paróquia</h4>
+                                <p>A freguesia é oficialmente criada em 21 de agosto de 1919, sob decreto de Monsenhor D. José Antônio de Oliveira Lopes.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-data">1920</div>
+                            <div class="timeline-conteudo">
+                                <h4>A Igreja Matriz</h4>
+                                <p>A igrejinha simples, sem bancos, evoluiu ao longo do século até tornar-se a paróquia central da cidade, que mais tarde mudaria de nome para Arcoverde.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-data">2019</div>
+                            <div class="timeline-conteudo">
+                                <h4>Centenário</h4>
+                                <p>A paróquia celebra seus 100 anos com uma peregrinação da réplica da imagem, destacando a forte religiosidade local.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-data">Hoje</div>
+                            <div class="timeline-conteudo">
+                                <h4>Padroeira de Arcoverde</h4>
+                                <p>Nossa Senhora do Livramento é padroeira da cidade, com a festa principal celebrada em 23 de setembro, reunindo milhares de fiéis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="altares-bloco">
+                    <h3 class="subtitulo-historia"><span>A Evolução do Altar</span></h3>
+                    <p class="subtitulo-descritivo">Ao longo da história, o Altar Mor passou por três grandes momentos, refletindo as transformações litúrgicas e o cuidado de cada geração com a casa de Deus.</p>
+
+                    <div class="altares-grid">
+                        <article class="altar-card">
+                            <div class="altar-numero">1º</div>
+                            <div class="altar-imagem comparison-slider" id="slider" role="img" aria-label="Comparação entre foto original e restaurada do primeiro altar">
+                                <img src="FotoPrimeiraAltarCelebracaomissas.png" alt="Foto original do primeiro altar" loading="lazy">
+                                <div class="camada-original">
+                                    <span class="label-before">ORIGINAL</span>
+                                </div>
+                                <div class="img-restaurada" id="restaurada">
+                                    <img src="FotoPrimeiroAltarrestauradocomIA.png" alt="Foto restaurada do primeiro altar com IA" loading="lazy">
+                                    <span class="label-after">RESTAURAÇÃO IA</span>
+                                </div>
+                            </div>
+                            <div class="altar-corpo">
+                                <span class="altar-tag">Liturgia em latim</span>
+                                <h4>O Primeiro Altar</h4>
+                                <p>Pelo estilo, a Missa era celebrada com o celebrante de costas para a assembleia, conforme a antiga liturgia em latim. Arraste o slider para ver a restauração feita por IA.</p>
+                            </div>
+                        </article>
+
+                        <article class="altar-card">
+                            <div class="altar-numero">2º</div>
+                            <div class="altar-imagem foto-container">
+                                <img src="FotoSegundoAltar.png" alt="Segundo altar da matriz após a reforma litúrgica" loading="lazy">
+                                <span class="label-fixo">PÓS-REFORMA</span>
+                            </div>
+                            <div class="altar-corpo">
+                                <span class="altar-tag">Vaticano II</span>
+                                <h4>A Reforma Litúrgica</h4>
+                                <p>Para acompanhar as diretrizes da nova liturgia do <strong>Vaticano II</strong>, o altar tornou-se mais simples, permitindo que o celebrante ficasse de frente para a assembleia, com a celebração em língua portuguesa.</p>
+                            </div>
+                        </article>
+
+                        <article class="altar-card altar-atual">
+                            <div class="altar-numero">3º</div>
+                            <div class="altar-imagem foto-container">
+                                <img src="FotoTerceiroAltarAtual.jpeg" alt="Novo altar mor da paróquia" loading="lazy">
+                                <span class="label-fixo label-atual">ATUAL</span>
+                            </div>
+                            <div class="altar-corpo">
+                                <span class="altar-tag tag-destaque">Novo Altar Mor</span>
+                                <h4>O Resgate da Tradição</h4>
+                                <p>Apresentamos oficialmente o novo <strong>Altar Mor</strong>, que une a tradição estética com a funcionalidade litúrgica atual, servindo como o novo coração espiritual de nossa comunidade.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section aria-labelledby="padroeira">
+            <h2 class="titulo" id="padroeira">Nossa Padroeira</h2>
+            <span class="linha-azul" aria-hidden="true"></span>
+
+            <div class="padroeira-container">
+                <div class="padroeira-card">
+                    <div class="padroeira-foto">
+                        <div class="padroeira-foto-wrapper">
+                            <img src="FotoPadroeira.webp" alt="Imagem de Nossa Senhora do Livramento" loading="lazy">
+                            <div class="moldura-dourada" aria-hidden="true"></div>
+                        </div>
+                    </div>
+                    <div class="padroeira-info">
+                        <span class="badge-padroeira">✦ Padroeira de Arcoverde ✦</span>
+                        <h3>Nossa Senhora do Livramento</h3>
+                        <p class="legenda-padroeira">"Mãe que nos livra de todos os males"</p>
+                        <div class="texto-devocional">
+                            <p>A devoção à Virgem do Livramento é o pilar que sustenta a fé do povo de Arcoverde há mais de 150 anos. Ela não é apenas uma imagem, mas o símbolo da proteção divina sobre nossa cidade.</p>
+                        </div>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="info-icone">📅</span>
+                                <strong>Festa Litúrgica</strong>
+                                <span>23 de Setembro</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icone">🕊️</span>
+                                <strong>Significado</strong>
+                                <span>Auxílio nos momentos de aflição</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icone">⛪</span>
+                                <strong>Tradição</strong>
+                                <span>Maior procissão do Sertão de PE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="devocao-grid">
+                    <article class="devocao-card devocao-hino">
+                        <div class="devocao-cabecalho">
+                            <span class="devocao-icone" aria-hidden="true">🎵</span>
+                            <h3>Hino à Padroeira</h3>
+                            <span class="devocao-subtitulo">Cântico tradicional</span>
+                        </div>
+                        <div class="devocao-corpo">
+                            <p class="estrofe">
+                                Ó Senhora do Livramento, vossos filhos,<br>
+                                Benigna amparai, e na hora do vil tormento,<br>
+                                nossa fé vinde e confortai.
+                            </p>
+                            <p class="estrofe refrao">
+                                Vinde ó mãe querida, vinde nos socorrer.<br>
+                                As lutas desta vida, ó mãe dai-nos vencer.
+                            </p>
+                            <p class="estrofe">
+                                Ao vosso meigo filho, mãe nos apresentai.<br>
+                                De nossos vis pecados, o perdão alcançai.
+                            </p>
+                            <p class="estrofe">
+                                Na hora derradeira, dai-nos vosso Jesus.<br>
+                                Que alegre nos receba, lá na eterna luz.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="devocao-card devocao-oracao">
+                        <div class="devocao-cabecalho">
+                            <span class="devocao-icone" aria-hidden="true">🙏</span>
+                            <h3>Oração à Padroeira</h3>
+                            <span class="devocao-subtitulo">Pela cidade de Arcoverde</span>
+                        </div>
+                        <div class="devocao-corpo">
+                            <p class="estrofe">Ó Senhora do Livramento, protegei a Cidade de Arcoverde que se colocou desde a sua fundação sob a tutela do vosso patrocínio.</p>
+                            <p class="estrofe">Livrai-nos de todos os males espirituais e temporais; reuni todos os cristãos desta comunidade no seio de uma mesma família, que se congrega em torno de Cristo para ser povo de Deus, em marcha, em busca da casa do Pai.</p>
+                            <p class="estrofe">Abençoai, especialmente, os enfermos, os famintos, os inválidos, os órfãos, as viúvas, os desamparados e os escravos da tirania do egoísmo.</p>
+                            <p class="estrofe">Abençoai, também de modo especial, aqueles irmãos a quem a comunidade confiou a missão de pregar o Evangelho e de trabalhar para a vossa Igreja.</p>
+                            <p class="amem">Amém.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section aria-labelledby="paroco">
+            <h2 class="titulo" id="paroco">Nosso Pároco</h2>
+            <span class="linha-azul" aria-hidden="true"></span>
+            <div class="padre-container">
+                <div class="padre-card">
+                    <img src="FotoPadreAdeildoSebastiaoFerreira.jpeg" alt="Padre Adeildo Sebastião Ferreira" width="180" height="180" loading="lazy">
+                    <div class="padre-info">
+                        <h3>Pe. Adeildo Sebastião Ferreira</h3>
+                        <p><strong>Pároco</strong> da Paróquia Nossa Senhora do Livramento</p>
+                        <p>Responsável pela condução espiritual da comunidade, celebrações e atividades pastorais da paróquia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section aria-labelledby="grupos">
+            <h2 class="titulo" id="grupos">Movimentos, Pastorais e Grupos</h2>
+            <span class="linha-azul" aria-hidden="true"></span>
+            <div class="grupos-container">
+                <p class="grupos-intro">A vida da nossa paróquia se faz na comunhão de muitos corações. Conheça os movimentos, pastorais e grupos que servem nossa comunidade.</p>
+                <div class="grupos-grid">
+                    <div class="grupo-item"><span class="grupo-icone" aria-hidden="true"><i class="fas fa-heart"></i></span><h4>Grupo Mãe da Ternura</h4></div>
+                    <div class="grupo-item"><span class="grupo-icone" aria-hidden="true"><i class="fas fa-music"></i></span><h4>Grupo Musical Sta. Cecília</h4></div>
+                    <div class="grupo-item"><span class="grupo-icone" aria-hidden="true"><i class="fas fa-pray"></i></span><h4>Homens do Terço</h4></div>
+                    <div class="grupo-item"><span class="grupo-icone" aria-hidden="true"><i class="fas fa-cross"></i></span><h4>Irmãs Religiosas</h4></div>
+                    <div class="grupo-item"><span class="grupo-icone" aria-hidden="true"><i class="fas fa-crown"></i></span><h4>Legião de Maria</h4></div>
+                    <div class="grupo-item"><span class="grupo-icone" aria-hidden="true"><i class="fas fa-bible"></i></span><h4>Ministros da Palavra</h4></div>
+                    <div class="grupo-item"><span class="grupo-icone" aria-hidden="true"><i class="fas fa-wine-glass"></i></span><h4>Ministros da Eucaristia</h4></div>
+                    <div class="grupo-item"><span class="grupo-icone" aria-hidden="true"><i class="fas fa-dove"></i></span><h4>Movimento Jesus Misericordioso</h4></div>
+                    <div class="grupo-item"><span class="grupo-icone" aria-hidden="true"><i class="fas fa-star"></i></span><h4>Movimento Mãe Rainha</h4></div>
+                    <div class="grupo-item"><span class="grupo-icone" aria-hidden="true"><i class="fas fa-hands-helping"></i></span><h4>Movimento Voc. Vicentino</h4></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- O GitHub Pages é estático: não exibir fotos falsas ou prometer integração automática com Instagram.
+             Para um feed automático real, seria necessário backend autorizado e autenticação da Meta. -->
+        <!-- REDES OFICIAIS: cada canal aparece aqui uma única vez.
+             Os links também aparecem em metadados internos para os buscadores. -->
+        <section aria-labelledby="redes">
+            <h2 class="titulo" id="redes">Acompanhe a Paróquia</h2>
+            <span class="linha-azul" aria-hidden="true"></span>
+            <div class="redes-container">
+                <p class="redes-intro">Veja fotografias das celebrações, comunicados, eventos e momentos da nossa comunidade pelos canais de comunicação da paróquia.</p>
+                <div class="redes-destaque">
+                    <div>
+                        <span class="redes-perfil"><i class="fab fa-instagram" aria-hidden="true"></i> @paroquiadolivramento</span>
+                        <h3>Nossas fotos e novidades estão no Instagram</h3>
+                        <p>Acompanhe as publicações diretamente no perfil da paróquia. Assim, você sempre vê as fotos realmente publicadas, sem uma galeria desatualizada no site.</p>
+                        <a class="redes-btn" href="https://www.instagram.com/paroquiadolivramento/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram" aria-hidden="true"></i> Ver fotos e publicações <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="redes-destaque-icon" aria-hidden="true"><i class="fab fa-instagram"></i></div>
+                </div>
+                <div class="redes-grid">
+                    <article class="rede-card">
+                        <i class="fab fa-facebook" aria-hidden="true"></i>
+                        <h3>Facebook</h3>
+                        <p>Publicações e comunicados para nossa comunidade.</p>
+                        <a href="https://www.facebook.com/pnslivramento" target="_blank" rel="noopener noreferrer">Visitar a página <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                    </article>
+                    <article class="rede-card">
+                        <i class="fab fa-youtube" aria-hidden="true"></i>
+                        <h3>YouTube</h3>
+                        <p>Transmissões e vídeos da PASCOM Livramento.</p>
+                        <a href="https://www.youtube.com/@PascomLivramento" target="_blank" rel="noopener noreferrer">Acessar o canal <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                    </article>
+                    <article class="rede-card">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        <h3>Canal do WhatsApp</h3>
+                        <p>Receba os comunicados divulgados no canal da paróquia.</p>
+                        <a href="https://www.whatsapp.com/channel/0029VaXvKtUDp2Q21fRl7R1A" target="_blank" rel="noopener noreferrer">Acompanhar canal <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                    </article>
+                    <article class="rede-card">
+                        <i class="fas fa-church" aria-hidden="true"></i>
+                        <h3>Diocese de Pesqueira</h3>
+                        <p>Conheça as notícias, orientações e atividades diocesanas.</p>
+                        <a href="https://diocesedepesqueira.com.br/" target="_blank" rel="noopener noreferrer">Visitar o site <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             AVISOS & EVENTOS — EDITE ESTA SEÇÃO PARA ADICIONAR NOTÍCIAS
+             Modelo de novo aviso: MODELO-NOVO-AVISO.html
+             Fotos: mantenha o mesmo nome no src e no data-lightbox.
+             ========================================================= -->
+        <section aria-labelledby="avisos">
+            <h2 class="titulo" id="avisos">Avisos & Eventos</h2>
+            <span class="linha-azul" aria-hidden="true"></span>
+
+            <div class="avisos-container">
+                <p class="avisos-intro">Acompanhe a vida da paróquia e recorde momentos especiais. Para anúncios recentes, consulte os canais oficiais.</p>
+
+                <article class="aviso-destaque">
+                    <!-- FOTO DA FESTA: substitua o arquivo citado nos dois atributos abaixo e no src da imagem. -->
+                    <div class="aviso-destaque-img" data-lightbox="FestaPadroeiraFoto01.jpg" data-alt="Festa de Nossa Senhora do Livramento" role="button" tabindex="0" aria-label="Ampliar foto da Festa de Nossa Senhora do Livramento">
+                        <img src="FestaPadroeiraFoto01.jpg" alt="Festa de Nossa Senhora do Livramento" loading="lazy" decoding="async">
+                        <span class="aviso-tag tag-festa"><i class="fas fa-star" aria-hidden="true"></i> Festa</span>
+                        <span class="zoom-hint"><i class="fas fa-search-plus"></i></span>
+                    </div>
+                    <div class="aviso-destaque-corpo">
+                        <span class="aviso-eyebrow">✦ Maior celebração do ano</span>
+                        <h3>Festa de Nossa Senhora do Livramento — 2026</h3>
+
+                        <div class="aviso-meta">
+                            <span><i class="far fa-calendar" aria-hidden="true"></i> 14 a 23 de setembro de 2026</span>
+                            <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Matriz do Livramento — Arcoverde/PE</span>
+                        </div>
+
+                        <p>Em 2026, a Festa da Padroeira reuniu a comunidade entre os dias 14 e 23 de setembro, com o tema “Com Maria, conhecer e praticar a Palavra”, incluindo celebrações, oração e a tradicional procissão.</p>
+
+                        <div class="programacao-festa">
+                            <strong>Recordando a edição de 2026</strong>
+                            <ul>
+                                <li><i class="fas fa-church" aria-hidden="true"></i><span><b>14 de setembro</b> — Missa solene de abertura.</span></li>
+                                <li><i class="fas fa-pray" aria-hidden="true"></i><span><b>14 a 23 de setembro</b> — Celebrações, oração e quermesse.</span></li>
+                                <li><i class="fas fa-walking" aria-hidden="true"></i><span><b>23 de setembro, 16h30</b> — Procissão em honra à Padroeira.</span></li>
+                            </ul>
+                        </div>
+                        <a class="btn-aviso" href="#redes">
+                            Acompanhar próximas programações <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- NOVOS EVENTOS: copie o bloco de MODELO-NOVO-AVISO.html para cá. -->
+                <div class="avisos-grid">
+                    <article class="aviso-card">
+                        <div class="aviso-card-img" data-lightbox="EucaristiaSantissimoFoto01.jpg" data-alt="Quinta Eucarística" role="button" tabindex="0" aria-label="Ampliar foto: Quinta Eucarística">
+                            <img src="EucaristiaSantissimoFoto01.jpg" alt="Quinta Eucarística" loading="lazy">
+                            <span class="aviso-tag tag-evento"><i class="fas fa-calendar-check" aria-hidden="true"></i> Evento</span>
+                            <span class="zoom-hint"><i class="fas fa-search-plus"></i></span>
+                        </div>
+                        <div class="aviso-card-corpo">
+                            <span class="aviso-data"><i class="far fa-clock" aria-hidden="true"></i> Quinta-feira · 07h30 às 17h</span>
+                            <h4>Quinta Eucarística</h4>
+                            <p>Exposição do Santíssimo Sacramento na Matriz do Livramento.</p>
+                            <ul>
+                                <li>Exposição do Santíssimo: 07h30 às 16h;</li>
+                                <li>Santa Missa: 17h00.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="aviso-card">
+                        <div class="aviso-card-img" data-lightbox="CatequeseFoto01.jpg" data-alt="Inscrições da Catequese" role="button" tabindex="0" aria-label="Ampliar foto: Inscrições da Catequese">
+                            <img src="CatequeseFoto01.jpg" alt="Inscrições da Catequese" loading="lazy">
+                            <span class="aviso-tag tag-aviso"><i class="fas fa-bullhorn" aria-hidden="true"></i> Aviso</span>
+                            <span class="zoom-hint"><i class="fas fa-search-plus"></i></span>
+                        </div>
+                        <div class="aviso-card-corpo">
+                            <span class="aviso-data"><i class="far fa-calendar" aria-hidden="true"></i> Domingos às 08h00</span>
+                            <h4>Catequese Paroquial</h4>
+                            <p>Local: Centro Pastoral.</p>
+                            <h5>Modalidades</h5>
+                            <ul>
+                                <li><strong>Catequese Infantil:</strong> preparação de crianças para os sacramentos, como a Primeira Eucaristia.</li>
+                                <li><strong>Catequese de Adolescentes:</strong> preparação para o sacramento da Crisma.</li>
+                                <li><strong>Catequese para Pais e Padrinhos:</strong> encontros de formação antes do Batismo da criança.</li>
+                            </ul>
+                            <p>Mais informações na secretaria paroquial.</p>
+                        </div>
+                    </article>
+
+                    <article class="aviso-card">
+                        <div class="aviso-card-img" data-lightbox="BatismoFoto02.jpg" data-alt="Galeria de Batismos" role="button" tabindex="0" aria-label="Ampliar foto: Galeria de Batismos">
+                            <img src="BatismoFoto02.jpg" alt="Galeria de Batismos" loading="lazy">
+                            <span class="aviso-tag tag-aviso"><i class="fas fa-bullhorn" aria-hidden="true"></i> Aviso</span>
+                            <span class="zoom-hint"><i class="fas fa-search-plus"></i></span>
+                        </div>
+                        <div class="aviso-card-corpo">
+                            <span class="aviso-data"><i class="far fa-calendar" aria-hidden="true"></i> Aos domingos</span>
+                            <h4>Batismos Coletivos</h4>
+                            <p>As inscrições são realizadas aos domingos, no Plantão do Batismo, após a Missa das 09h.</p>
+                            <h5>Documentos necessários</h5>
+                            <ul>
+                                <li>Cópia da certidão de nascimento da criança;</li>
+                                <li>Cópia do RG e CPF dos padrinhos;</li>
+                                <li>Endereço e telefone dos pais;</li>
+                                <li>Comprovante do curso, caso tenha sido realizado em outra paróquia;</li>
+                                <li>Consulte na secretaria a existência de taxas e os valores atualizados.</li>
+                            </ul>
+                            <h5>Atenção</h5>
+                            <ul>
+                                <li>Os padrinhos devem ser casados no religioso; ou</li>
+                                <li>Solteiros, maiores de 16 anos, crismados e que não convivam maritalmente.</li>
+                            </ul>
+                            <p class="lei-canonica">Lei Canônica (CIC, CAN. 849-878; CCEO, CAN. 679).</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section aria-labelledby="doacao">
+            <h2 class="titulo" id="doacao">Dízimo e Ofertas</h2>
+            <span class="linha-azul" aria-hidden="true"></span>
+
+            <div class="doacao-container">
+                <blockquote class="versiculo-doacao">
+                    Cada um dê conforme tiver proposto no seu coração, não com tristeza ou por obrigação, porque Deus ama quem dá com alegria.
+                    <cite>2 Coríntios 9, 7</cite>
+                </blockquote>
+
+                <div class="doacao-destinos">
+                    <div class="destino-item"><span class="destino-icone" aria-hidden="true"><i class="fas fa-church"></i></span><h4>Manutenção da Matriz</h4><p>Conservação da igreja, ornamentação litúrgica e estrutura paroquial.</p></div>
+                    <div class="destino-item"><span class="destino-icone" aria-hidden="true"><i class="fas fa-hands-helping"></i></span><h4>Ações Sociais</h4><p>Apoio a famílias em situação de vulnerabilidade e obras de caridade.</p></div>
+                    <div class="destino-item"><span class="destino-icone" aria-hidden="true"><i class="fas fa-bible"></i></span><h4>Evangelização</h4><p>Catequese, pastorais e formação cristã da nossa comunidade.</p></div>
+                    <div class="destino-item"><span class="destino-icone" aria-hidden="true"><i class="fas fa-broadcast-tower"></i></span><h4>Transmissões</h4><p>Equipamentos e estrutura para levar a Santa Missa a quem não pode estar presente.</p></div>
+                </div>
+
+                <div class="doacao-card">
+                    <div class="doacao-texto">
+                        <span class="doacao-eyebrow">✦ Contribua com a Paróquia</span>
+                        <h3>Sua oferta sustenta a Casa de Deus</h3>
+                        <p>Através do dízimo e das ofertas, você participa diretamente da missão evangelizadora e das obras de caridade da nossa paróquia.</p>
+
+                        <div class="doacao-tabs" role="tablist">
+                            <button type="button" class="doacao-tab ativa" data-tab="pix" role="tab" aria-selected="true"><i class="fas fa-bolt" aria-hidden="true"></i> PIX</button>
+                            <button type="button" class="doacao-tab" data-tab="banco" role="tab" aria-selected="false"><i class="fas fa-university" aria-hidden="true"></i> Transferência</button>
+                        </div>
+
+                        <div class="doacao-painel ativo" data-painel="pix" role="tabpanel">
+                            <button type="button" class="pix-box" id="btn-pix" title="Clique para copiar a chave PIX">
+                                <span class="pix-icone" aria-hidden="true">PIX</span>
+                                <span class="pix-conteudo">
+                                    <span class="pix-label">Chave PIX (CNPJ)</span>
+                                    <span id="chave-pix" class="pix-codigo">10.714.251/0028-01</span>
+                                    <span class="pix-aviso"><i class="fas fa-copy" aria-hidden="true"></i> Clique para copiar</span>
+                                </span>
+                            </button>
+                        </div>
+
+                        <div class="doacao-painel" data-painel="banco" role="tabpanel">
+                            <div class="dados-bancarios">
+                                <div class="banco-cabecalho">
+                                    <span class="banco-icone" aria-hidden="true"><i class="fas fa-university"></i></span>
+                                    <div><strong>Caixa Econômica Federal</strong><span>Banco 104</span></div>
+                                </div>
+                                <div class="banco-grid">
+                                    <div><span>Agência</span>0915</div>
+                                    <div><span>Operação</span>003</div>
+                                    <div><span>Conta Corrente</span>2898-2</div>
+                                    <div><span>Tipo</span>Corrente</div>
+                                    <div class="banco-favorecido"><span>Favorecido</span>Paróquia N. Sra. do Livramento</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qr-wrapper">
+                        <div class="qr-card-wrapper">
+                            <div class="qr-card"><img src="QRCodePixParoquia.png" alt="QR Code para doação via PIX" width="200" height="200" loading="lazy"></div>
+                            <div class="qr-moldura" aria-hidden="true"></div>
+                        </div>
+                        <span class="qr-titulo">Doe pelo QR Code</span>
+                        <p class="qr-legenda">Aponte a câmera do seu app bancário</p>
+                        <div class="qr-passos" aria-hidden="true">
+                            <span>1. Abra o app</span><i class="fas fa-chevron-right"></i>
+                            <span>2. Pague com PIX</span><i class="fas fa-chevron-right"></i>
+                            <span>3. Aponte aqui</span>
+                        </div>
+                    </div>
+                </div>
+                <p style="margin: 17px auto 0; color: var(--texto-fraco); font-size: .85rem; line-height: 1.5;">
+                    Antes de transferir, confira se a chave PIX, o QR Code e o favorecido correspondem aos dados oficiais da paróquia.
+                </p>
+            </div>
+        </section>
+
+        <section aria-labelledby="contato">
+            <h2 class="titulo" id="contato">Fale com a Paróquia</h2>
+            <span class="linha-azul" aria-hidden="true"></span>
+            <!-- CONTATO: aqui somente secretaria (conversa) e endereço;
+                 redes sociais ficam na seção #redes acima. -->
+            <div class="contato-moderno">
+                <div class="card-contato whatsapp">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    <h3>WhatsApp</h3>
+                    <p>Fale direto com a secretaria paroquial</p>
+                    <a href="https://wa.me/5587991587001?text=Olá,%20gostaria%20de%20informações%20da%20paróquia" target="_blank" rel="noopener">Iniciar conversa</a>
+                </div>
+                <div class="card-contato endereco">
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                    <h3>Endereço</h3>
+                    <address>Praça do Livramento, s/n<br>Centro — Arcoverde/PE</address>
+                </div>
+            </div>
+            <div class="atendimento-secretaria">
+                <h3><i class="far fa-clock" aria-hidden="true"></i> Atendimento da Secretaria Paroquial</h3>
+                <p><strong>Segunda a sexta:</strong> 08h às 12h e 14h às 18h.</p>
+                <p><strong>Sábado:</strong> 08h às 12h.</p>
+                <p><strong>Telefone / WhatsApp:</strong> <a href="https://wa.me/5587991587001" target="_blank" rel="noopener noreferrer">(87) 9 9158-7001</a></p>
+                <p style="font-size: .82rem;">Informações conforme cadastro da Diocese de Pesqueira. Confirme alterações em feriados.</p>
+            </div>
+        </section>
+
+        <section aria-labelledby="localizacao">
+            <h2 class="titulo" id="localizacao">Localização</h2>
+            <span class="linha-azul" aria-hidden="true"></span>
+            <div class="mapa-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d243.61606961695725!2d-37.05340592618248!3d-8.41933398296192!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7a81bc280b18d69%3A0x13d550240bcefa19!2sPar%C3%B3quia%20Nossa%20Senhora%20do%20Livramento!5e1!3m2!1spt-BR!2sbr!4v1777137535679!5m2!1spt-BR!2sbr"
+                    title="Mapa da Paróquia Nossa Senhora do Livramento"
+                    width="100%" height="350" style="border:0;" allowfullscreen loading="lazy"></iframe>
+                <p style="text-align:center; margin-top:15px;">
+                    <a href="https://maps.google.com/?q=Paróquia Nossa Senhora do Livramento Arcoverde" target="_blank" rel="noopener" class="btn-maps">📍 Abrir no Google Maps</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>© <span id="ano-atual">2026</span> Paróquia Nossa Senhora do Livramento</p>
+        <p class="dev">
+            👨‍💻 Desenvolvido por:
+            <a href="https://www.instagram.com/cauaznk7/?hl=pt-br"><strong>Cauã</strong></a>,
+            <a href="https://www.instagram.com/alien_okyak/?hl=pt-br"><strong>Kayko</strong></a>,
+            <a href="https://www.instagram.com/victorgabrieeel6543/?hl=pt-br"><strong>Victor</strong></a>,
+            <a href="https://www.instagram.com/yamzingx/?hl=pt-br"><strong>Yam</strong></a>
+        </p>
+    </footer>
+    <!-- Lightbox Fullscreen com Pinch-to-Zoom -->
+    <div class="lightbox-overlay" id="lightbox-overlay" aria-hidden="true" role="dialog" aria-label="Visualizar foto">
+        <button class="lightbox-fechar" id="lightbox-fechar" aria-label="Fechar">&times;</button>
+        <img id="lightbox-img" src="" alt="">
+        <div class="lightbox-dica" id="lightbox-dica">
+            <i class="fas fa-hand-pointer"></i> Use dois dedos para dar zoom
+        </div>
+    </div>
+    <!-- FUNCIONALIDADES: scripts separados para facilitar manutenção. -->
+    <script src="js/script.js" defer></script>
+</body>
+</html>
