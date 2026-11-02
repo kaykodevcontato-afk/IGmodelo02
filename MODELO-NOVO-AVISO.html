@@ -1,14 +1,21 @@
-<!-- MODELO DE NOVO AVISO: copie o artigo inteiro para dentro de <div class="avisos-grid"> no index.html. -->
+<!-- MODELO PARA NOVO AVISO / EVENTO
+     PASSO 1: No início do index.html, em 📸 FOTOS DO SITE, acrescente:
+               "novo_evento": "MinhaFotoDoEvento.jpg"
+             Lembre-se de colocar uma vírgula após a linha anterior do JSON.
+     PASSO 2: Copie o artigo completo abaixo para dentro de <div class="avisos-grid">.
+     PASSO 3: Atualize título, data, texto e, se desejar, o identificador novo_evento.
+     Não é necessário escrever o nome da foto em dois lugares.
+-->
 <article class="aviso-card">
-    <!-- Troque FOTO-DO-EVENTO.jpg nos dois pontos abaixo, pelo MESMO nome. -->
-    <div class="aviso-card-img" data-lightbox="FOTO-DO-EVENTO.jpg" data-alt="Descrição da foto" role="button" tabindex="0" aria-label="Ampliar foto do evento">
-        <img src="FOTO-DO-EVENTO.jpg" alt="Descrição da foto" loading="lazy">
+    <div class="aviso-card-img" data-lightbox-foto="novo_evento" data-alt="Foto do novo evento"
+         role="button" tabindex="0" aria-label="Ampliar foto do novo evento">
+        <img data-foto="novo_evento" alt="Foto do novo evento" loading="lazy">
         <span class="aviso-tag tag-evento"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Evento</span>
         <span class="zoom-hint"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
     </div>
     <div class="aviso-card-corpo">
-        <span class="aviso-data"><i class="far fa-calendar" aria-hidden="true"></i> DIA E MÊS</span>
+        <span class="aviso-data"><i class="far fa-calendar" aria-hidden="true"></i> DATA DO EVENTO</span>
         <h4>TÍTULO DO NOVO EVENTO</h4>
-        <p>Descreva o evento em uma ou duas frases. Inclua horário e local, se necessário.</p>
+        <p>Coloque uma descrição do evento, horário e local.</p>
     </div>
 </article>

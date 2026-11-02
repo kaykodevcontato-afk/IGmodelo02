@@ -6,6 +6,51 @@
     <title>Paróquia Nossa Senhora do Livramento - Arcoverde/PE</title>
     <meta name="description" content="Paróquia Nossa Senhora do Livramento em Arcoverde - horários de missas, transmissões ao vivo, história e contato.">
     <meta name="keywords" content="igreja Arcoverde, missa Arcoverde, Nossa Senhora do Livramento, paróquia">
+
+    <!-- ================================================================
+         📸 FOTOS DO SITE — ALTERE OS NOMES DOS ARQUIVOS SOMENTE AQUI
+         ================================================================
+         Como trocar: coloque sua foto na mesma pasta que index.html
+         e substitua, abaixo, apenas o nome entre aspas à direita dos dois-pontos.
+         Ex.: "festa": "MinhaNovaFoto.jpg"
+         Você NÃO precisa procurar a mesma foto em vários lugares do HTML.
+         As referências data-foto e data-lightbox-foto são identificadores,
+         não nomes dos arquivos. Não os modifique ao trocar uma foto.
+         Se adicionar um evento, crie também a chave para a foto dele.
+         ================================================================ -->
+    <script id="catalogo-de-fotos" type="application/json">
+    {
+      "brasao": "LogoBrasaoDaParoquia.png",  
+      "entrada_igreja": "Foto1EntradaIgreja.jpg",  
+      "altar_1_original": "FotoPrimeiraAltarCelebracaomissas.png",  
+      "altar_1_restaurado": "FotoPrimeiroAltarrestauradocomIA.png",  
+      "altar_2": "FotoSegundoAltar.png",  
+      "altar_3": "FotoTerceiroAltarAtual.jpeg",  
+      "padroeira": "FotoPadroeira.webp",  
+      "paroco": "FotoPadreAdeildoSebastiaoFerreira.jpeg",  
+      "festa": "FestaPadroeiraFoto01.jpg",  
+      "quinta_eucaristica": "EucaristiaSantissimoFoto01.jpg",  
+      "catequese": "CatequeseFoto01.jpg",  
+      "batismo": "BatismoFoto02.jpg",  
+      "qr_pix": "QRCodePixParoquia.png"  
+    }
+    </script>
+    <!-- GUIA DO CATÁLOGO (ordem igual à lista acima):
+         brasao                  = Brasão / logo — aparece no topo e no carregamento
+         entrada_igreja          = Foto grande do início — fachada da igreja
+         altar_1_original        = História — primeiro altar (foto original)
+         altar_1_restaurado      = História — primeiro altar (restauração por IA)
+         altar_2                 = História — segundo altar
+         altar_3                 = História — terceiro altar (atual)
+         padroeira               = Seção Nossa Padroeira — foto com moldura dourada
+         paroco                  = Seção Nosso Pároco
+         festa                   = Avisos e Eventos — Festa do Livramento (com moldura dourada)
+         quinta_eucaristica      = Avisos e Eventos — Quinta Eucarística
+         catequese               = Avisos e Eventos — Catequese
+         batismo                 = Avisos e Eventos — Batismos
+         qr_pix                  = Doações — QR Code do PIX (não é foto decorativa)
+    -->
+
     <!-- Configure a URL canônica apenas após confirmar o endereço de publicação definitivo.
          Ex.: <link rel="canonical" href="https://SEU-DOMINIO/"> -->
 
@@ -54,7 +99,7 @@
         <div class="preloader-logo-wrap">
             <div class="preloader-anel"></div>
             <div class="preloader-anel2"></div>
-            <img src="LogoBrasaoDaParoquia.png" alt="Brasão da Paróquia" width="90" height="90">
+            <img data-foto="brasao" alt="Brasão da Paróquia" width="90" height="90">
         </div>
         <p class="preloader-texto">Carregando...</p>
     </div>
@@ -63,7 +108,7 @@
     <audio id="som-sino" src="Somsinohorafundo.mp3" preload="auto"></audio>
 
     <header class="topo">
-        <img src="LogoBrasaoDaParoquia.png" alt="Brasão da Paróquia Nossa Senhora do Livramento" class="logo" width="50" height="50">
+        <img data-foto="brasao" alt="Brasão da Paróquia Nossa Senhora do Livramento" class="logo" width="50" height="50">
         <div class="container-titulo">
             <h1 class="nome-site">Paróquia Nossa Senhora do Livramento</h1>
             <p class="localizacao-topo">Arcoverde - PE</p>
@@ -84,7 +129,7 @@
     </header>
 
     <main id="conteudo">
-        <section class="parallax" aria-label="Boas-vindas">
+        <section class="parallax" data-foto-fundo="entrada_igreja" aria-label="Boas-vindas">
             <div class="overlay">
                 <h2>Paróquia Nossa Senhora do Livramento</h2>
                 <p class="subtitulo-parallax">Sejam bem-vindos</p>
@@ -244,12 +289,12 @@
                         <article class="altar-card">
                             <div class="altar-numero">1º</div>
                             <div class="altar-imagem comparison-slider" id="slider" role="img" aria-label="Comparação entre foto original e restaurada do primeiro altar">
-                                <img src="FotoPrimeiraAltarCelebracaomissas.png" alt="Foto original do primeiro altar" loading="lazy">
+                                <img data-foto="altar_1_original" alt="Foto original do primeiro altar" loading="lazy">
                                 <div class="camada-original">
                                     <span class="label-before">ORIGINAL</span>
                                 </div>
                                 <div class="img-restaurada" id="restaurada">
-                                    <img src="FotoPrimeiroAltarrestauradocomIA.png" alt="Foto restaurada do primeiro altar com IA" loading="lazy">
+                                    <img data-foto="altar_1_restaurado" alt="Foto restaurada do primeiro altar com IA" loading="lazy">
                                     <span class="label-after">RESTAURAÇÃO IA</span>
                                 </div>
                             </div>
@@ -263,7 +308,7 @@
                         <article class="altar-card">
                             <div class="altar-numero">2º</div>
                             <div class="altar-imagem foto-container">
-                                <img src="FotoSegundoAltar.png" alt="Segundo altar da matriz após a reforma litúrgica" loading="lazy">
+                                <img data-foto="altar_2" alt="Segundo altar da matriz após a reforma litúrgica" loading="lazy">
                                 <span class="label-fixo">PÓS-REFORMA</span>
                             </div>
                             <div class="altar-corpo">
@@ -276,7 +321,7 @@
                         <article class="altar-card altar-atual">
                             <div class="altar-numero">3º</div>
                             <div class="altar-imagem foto-container">
-                                <img src="FotoTerceiroAltarAtual.jpeg" alt="Novo altar mor da paróquia" loading="lazy">
+                                <img data-foto="altar_3" alt="Novo altar mor da paróquia" loading="lazy">
                                 <span class="label-fixo label-atual">ATUAL</span>
                             </div>
                             <div class="altar-corpo">
@@ -298,7 +343,7 @@
                 <div class="padroeira-card">
                     <div class="padroeira-foto">
                         <div class="padroeira-foto-wrapper">
-                            <img src="FotoPadroeira.webp" alt="Imagem de Nossa Senhora do Livramento" loading="lazy">
+                            <img data-foto="padroeira" alt="Imagem de Nossa Senhora do Livramento" loading="lazy">
                             <div class="moldura-dourada" aria-hidden="true"></div>
                         </div>
                     </div>
@@ -380,7 +425,7 @@
             <span class="linha-azul" aria-hidden="true"></span>
             <div class="padre-container">
                 <div class="padre-card">
-                    <img src="FotoPadreAdeildoSebastiaoFerreira.jpeg" alt="Padre Adeildo Sebastião Ferreira" width="180" height="180" loading="lazy">
+                    <img data-foto="paroco" alt="Padre Adeildo Sebastião Ferreira" width="180" height="180" loading="lazy">
                     <div class="padre-info">
                         <h3>Pe. Adeildo Sebastião Ferreira</h3>
                         <p><strong>Pároco</strong> da Paróquia Nossa Senhora do Livramento</p>
@@ -462,7 +507,7 @@
         <!-- =========================================================
              AVISOS & EVENTOS — EDITE ESTA SEÇÃO PARA ADICIONAR NOTÍCIAS
              Modelo de novo aviso: MODELO-NOVO-AVISO.html
-             Fotos: mantenha o mesmo nome no src e no data-lightbox.
+             Fotos: altere os nomes apenas no CATÁLOGO DE FOTOS no início deste HTML.
              ========================================================= -->
         <section aria-labelledby="avisos">
             <h2 class="titulo" id="avisos">Avisos & Eventos</h2>
@@ -472,9 +517,13 @@
                 <p class="avisos-intro">Acompanhe a vida da paróquia e recorde momentos especiais. Para anúncios recentes, consulte os canais oficiais.</p>
 
                 <article class="aviso-destaque">
-                    <!-- FOTO DA FESTA: substitua o arquivo citado nos dois atributos abaixo e no src da imagem. -->
-                    <div class="aviso-destaque-img" data-lightbox="FestaPadroeiraFoto01.jpg" data-alt="Festa de Nossa Senhora do Livramento" role="button" tabindex="0" aria-label="Ampliar foto da Festa de Nossa Senhora do Livramento">
-                        <img src="FestaPadroeiraFoto01.jpg" alt="Festa de Nossa Senhora do Livramento" loading="lazy" decoding="async">
+                    <!-- FOTO DA FESTA: altere a chave "festa" no CATÁLOGO DE FOTOS no início deste arquivo. -->
+                    <div class="aviso-destaque-img" data-lightbox-foto="festa" data-alt="Festa de Nossa Senhora do Livramento" role="button" tabindex="0" aria-label="Ampliar foto da Festa de Nossa Senhora do Livramento">
+                        <!-- FOTO DA FESTA: a moldura usa a mesma classe da imagem da Padroeira. -->
+                        <span class="foto-festa-wrapper">
+                            <img data-foto="festa" alt="Festa de Nossa Senhora do Livramento" loading="lazy" decoding="async">
+                            <span class="moldura-dourada" aria-hidden="true"></span>
+                        </span>
                         <span class="aviso-tag tag-festa"><i class="fas fa-star" aria-hidden="true"></i> Festa</span>
                         <span class="zoom-hint"><i class="fas fa-search-plus"></i></span>
                     </div>
@@ -506,8 +555,8 @@
                 <!-- NOVOS EVENTOS: copie o bloco de MODELO-NOVO-AVISO.html para cá. -->
                 <div class="avisos-grid">
                     <article class="aviso-card">
-                        <div class="aviso-card-img" data-lightbox="EucaristiaSantissimoFoto01.jpg" data-alt="Quinta Eucarística" role="button" tabindex="0" aria-label="Ampliar foto: Quinta Eucarística">
-                            <img src="EucaristiaSantissimoFoto01.jpg" alt="Quinta Eucarística" loading="lazy">
+                        <div class="aviso-card-img" data-lightbox-foto="quinta_eucaristica" data-alt="Quinta Eucarística" role="button" tabindex="0" aria-label="Ampliar foto: Quinta Eucarística">
+                            <img data-foto="quinta_eucaristica" alt="Quinta Eucarística" loading="lazy">
                             <span class="aviso-tag tag-evento"><i class="fas fa-calendar-check" aria-hidden="true"></i> Evento</span>
                             <span class="zoom-hint"><i class="fas fa-search-plus"></i></span>
                         </div>
@@ -523,8 +572,8 @@
                     </article>
 
                     <article class="aviso-card">
-                        <div class="aviso-card-img" data-lightbox="CatequeseFoto01.jpg" data-alt="Inscrições da Catequese" role="button" tabindex="0" aria-label="Ampliar foto: Inscrições da Catequese">
-                            <img src="CatequeseFoto01.jpg" alt="Inscrições da Catequese" loading="lazy">
+                        <div class="aviso-card-img" data-lightbox-foto="catequese" data-alt="Inscrições da Catequese" role="button" tabindex="0" aria-label="Ampliar foto: Inscrições da Catequese">
+                            <img data-foto="catequese" alt="Inscrições da Catequese" loading="lazy">
                             <span class="aviso-tag tag-aviso"><i class="fas fa-bullhorn" aria-hidden="true"></i> Aviso</span>
                             <span class="zoom-hint"><i class="fas fa-search-plus"></i></span>
                         </div>
@@ -543,8 +592,8 @@
                     </article>
 
                     <article class="aviso-card">
-                        <div class="aviso-card-img" data-lightbox="BatismoFoto02.jpg" data-alt="Galeria de Batismos" role="button" tabindex="0" aria-label="Ampliar foto: Galeria de Batismos">
-                            <img src="BatismoFoto02.jpg" alt="Galeria de Batismos" loading="lazy">
+                        <div class="aviso-card-img" data-lightbox-foto="batismo" data-alt="Galeria de Batismos" role="button" tabindex="0" aria-label="Ampliar foto: Galeria de Batismos">
+                            <img data-foto="batismo" alt="Galeria de Batismos" loading="lazy">
                             <span class="aviso-tag tag-aviso"><i class="fas fa-bullhorn" aria-hidden="true"></i> Aviso</span>
                             <span class="zoom-hint"><i class="fas fa-search-plus"></i></span>
                         </div>
@@ -630,7 +679,7 @@
 
                     <div class="qr-wrapper">
                         <div class="qr-card-wrapper">
-                            <div class="qr-card"><img src="QRCodePixParoquia.png" alt="QR Code para doação via PIX" width="200" height="200" loading="lazy"></div>
+                            <div class="qr-card"><img data-foto="qr_pix" alt="QR Code para doação via PIX" width="200" height="200" loading="lazy"></div>
                             <div class="qr-moldura" aria-hidden="true"></div>
                         </div>
                         <span class="qr-titulo">Doe pelo QR Code</span>
@@ -708,7 +757,7 @@
             <i class="fas fa-hand-pointer"></i> Use dois dedos para dar zoom
         </div>
     </div>
-    <!-- FUNCIONALIDADES: scripts separados para facilitar manutenção. -->
+    <!-- FUNCIONALIDADES: scripts separados. As fotos são carregadas do catálogo acima. -->
     <script src="js/script.js" defer></script>
 </body>
 </html>

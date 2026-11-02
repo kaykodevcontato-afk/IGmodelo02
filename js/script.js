@@ -1,4 +1,55 @@
 /* ================================================================
+   FOTOS DO SITE — NÃO EDITE O NOME DAS FOTOS NESTE JAVASCRIPT.
+   Todas as imagens são configuradas no CATÁLOGO DE FOTOS,
+   bem no início do arquivo index.html.
+   ================================================================ */
+(function aplicarCatalogoDeFotos() {
+    const bloco = document.getElementById('catalogo-de-fotos');
+    if (!bloco) return;
+
+    let fotos;
+    try {
+        fotos = JSON.parse(bloco.textContent);
+    } catch (erro) {
+        console.error('Catálogo de fotos inválido em index.html:', erro);
+        return;
+    }
+
+    function buscarFoto(chave) {
+        const nome = fotos[chave];
+        if (typeof nome !== 'string' || !nome.trim()) {
+            console.warn('Foto não encontrada no catálogo:', chave);
+            return null;
+        }
+        return nome.trim();
+    }
+
+    document.querySelectorAll('img[data-foto]').forEach(function(img) {
+        const nome = buscarFoto(img.dataset.foto);
+        if (nome) img.setAttribute('src', nome);
+    });
+
+    document.querySelectorAll('[data-foto-fundo]').forEach(function(elemento) {
+        const nome = buscarFoto(elemento.dataset.fotoFundo);
+        if (nome) elemento.style.backgroundImage = 'url(' + JSON.stringify(nome) + ')';
+    });
+
+    document.querySelectorAll('[data-lightbox-foto]').forEach(function(elemento) {
+        const nome = buscarFoto(elemento.dataset.lightboxFoto);
+        if (nome) elemento.setAttribute('data-lightbox', nome);
+    });
+
+    // Ícone do navegador e imagem de compartilhamento acompanham a logo.
+    const brasao = buscarFoto('brasao');
+    if (brasao) {
+        const icone = document.querySelector('link[rel="icon"]');
+        const imagemSocial = document.querySelector('meta[property="og:image"]');
+        if (icone) icone.setAttribute('href', brasao);
+        if (imagemSocial) imagemSocial.setAttribute('content', brasao);
+    }
+})();
+
+/* ================================================================
    PARÓQUIA NOSSA SENHORA DO LIVRAMENTO — FUNCIONALIDADES
    ================================================================
    As informações do site (fotos, textos, eventos e horários) ficam
